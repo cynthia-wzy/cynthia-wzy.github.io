@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>myForm</title>
+	<style type="text/css">
+		h1 {
+			font-family: sans-serif, tahoma; 
+			color: #5c5b59;
+		}
+		label {
+			font-weight: 550; 
+			color:firebrick
+		}
+		.nRequired label {color: inherit;}
+		#description{
+			color: lightslategrey;
+			font-size: 13pt;
+			font-weight: bold;
+		}
+		h1 span {text-decoration: overline;}
+		h1, span {text-decoration: underline;}
+		.box{
+			background: papayawhip;
+		}
+		body {background-color: linen}
+
+	</style>
+</head>
+<body>
+	<h1><span>New HTML5</span> Input Types Demo</h1>
+	<p id="description">
+		<i> form demonstrates the HTML5 input types and the placeholder, required and autofocus attributes.</i>
+	</p>
+	<form method="post" action="https://cs2022">
+		<label class="nRequired" style="color:rosybrown">Color:
+			<input type="color">
+			<span>(Hexadecimal code such as #ADD8E6)</span>
+		</label>
+		<p>
+			<label>Date:
+				<input type="date">
+				<span>(yyyy-mm-dd)</span>		
+			</label>
+		</p>
+		<p>
+			<label>Email:
+				<input type="email" name="email" placeholder="name@domain.com">
+				<span>(name@domain.com)</span>
+			</label>
+		</p>
+		<p>
+			<label class="nRequired" style="color:rosybrown">Number:
+				<input type="number" min="0" max="7" value="4">
+				<span>(Enter a number between 0 and 7)</span>
+			</label>
+		</p>
+		<p>
+			<label class="nRequired" style="color:rosybrown">Range:
+				0
+				<input type="range" min="0" max="20">
+				20
+			</label>
+		</p>
+		<p>
+			<label>Search:
+				<input type="search" placeholder="seach query">
+			</label>
+		</p>
+		<p>
+			<label>Time:
+				<input type="time" name="">
+				<span>(hh:mm)</span>
+			</label>
+		</p>
+		<p>
+			<input type="submit" value="Submit" class="box">
+			<input type="reset" value="Clear" class="box">
+		</p>
+	</form>
+</body>
+</html>
