@@ -9,27 +9,44 @@
 			font-family: papyrus, sans-serif;
 			font-weight: bold;
 		}
+		.textleft, .textright {font-size: 12pt;}
 		body {
 			background-image: url(homepageBg.png);
 			background-size: 110%;
 		}
-		.right{
+		.textleft{
 			position: relative;
+			top: 80px;
+			left: 200px;			
+		}
+		.textright{
+			position: relative;
+			left: 280px;
+		}
+		.picleft{
+			position: relative;
+			top: 80px;
 			left: 200px;
-			bottom: 200px;
+		}
+		.picright{
+			position: relative;
+			top: 80px;
+			left: 500px;
 		}
 	</style>
 </head>
 <body>
 	<h1 align="center">Homepage</h1>
-	<p>| Get to know me more:</p>
+	<p class="textleft">Get to know me more:
+		<span class="textright">Click the icon to fill in the form:</span>
+	</p>
+	<p>
 		<a href="https://cynthia-wzy.github.io/HTML_HW2/aboutMe">
-			<img src="info.png" width="150" height="150" alt="about me">
+			<img src="info.png" width="150" height="150" alt="about me" class="picleft">
 		</a>
-	<p>| Click the icon to fill in the form:</p>
 		<a href="https://cynthia-wzy.github.io/HTML_HW2/myForm">
-			<img src="form.png" width="150" height="150" alt="form">
+			<img src="form.png" width="150" height="150" alt="form" class="picright">
 		</a>
-	<img src="quote.png" width="350" height="400" alt="quote" class="right">
+	</p>
 </body>
 </html>
