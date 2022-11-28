@@ -1,12 +1,20 @@
 nav {
     font-weight: bold;
-    border: 2px solid slategray;
+    font-size: 15px;
+    border: 2px solid;
     text-align: center;
+    background-color:bisque;
+    width: 30em;
 }
 
 nav:hover ul {display: block}
 
-.navbar li:hover {background-color:thistle} 
+.navbar li:hover {background-color:darksalmon}
+
+.navbar li {
+    background-color:beige;
+    border-top: 2px solid;
+}
 
 body {
     padding: 20px;
@@ -19,7 +27,7 @@ ul {
     position: relative;
     top: 5px;
     left: 10px;
-    width: 50px;
+    width: 90%;
 }  
 
 li {
@@ -27,4 +35,10 @@ li {
     margin: 10px;
     padding: 5px;
     border-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+      background-color:darkgrey;
+    }
 }
