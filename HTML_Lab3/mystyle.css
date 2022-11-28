@@ -1,0 +1,30 @@
+nav {
+    font-weight: bold;
+    border: 2px solid slategray;
+    text-align: center;
+}
+
+nav:hover ul {display: block}
+
+.navbar li:hover {background-color:thistle} 
+
+body {
+    padding: 20px;
+    font-family: papyrus, sans-serif, tahoma;
+    color: brown;
+    background-color:antiquewhite;
+}
+
+ul {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    width: 50px;
+}  
+
+li {
+    background:fixed;
+    margin: 10px;
+    padding: 5px;
+    border-right: 5px;
+}
