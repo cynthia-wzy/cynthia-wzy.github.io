@@ -24,6 +24,7 @@ body {
 }
 
 ul {
+    list-style:none;
     position: relative;
     top: 5px;
     left: 10px;
@@ -36,6 +37,8 @@ li {
     padding: 5px;
     border-right: 5px;
 }
+
+a {text-decoration: none;}
 
 @media screen and (max-width: 600px) {
     body {
