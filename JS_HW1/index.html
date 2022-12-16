@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<script type="text/javascript">
+		var rand = Math.floor((Math.random()*10)+1);
+        var guessNum = parseInt(window.prompt("Guess a number from 1-10"));
+
+        while (guessNum != rand){
+            guessNum = parseInt(window.prompt("Guess a number from 1-10"));
+        }
+
+        document.write("<h1>You guess the correct number: "+guessNum + "</h1>");
+        document.body.style.backgroundColor = '#759bbc';
+	</script>
+
+</body>
+</html>
