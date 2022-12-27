@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Roll Dice</title>
+</head>
+<body>
+	<form action="#">
+		<input id="rollButton" type="button" value="Roll Dice">
+	</form>
+
+	<p>
+		<img id="die1" src="die1.png" alt="blank image">
+		<img id="die2" src="die1.png" alt="blank image">
+		<img id="die3" src="die1.png" alt="blank image">
+		<img id="die4" src="die1.png" alt="blank image">
+		<img id="die5" src="die1.png" alt="blank image">
+		<img id="die6" src="die1.png" alt="blank image">
+	</p>
+	<p>
+		<img id="die7" src="die1.png" alt="blank image">
+		<img id="die8" src="die1.png" alt="blank image">
+		<img id="die9" src="die1.png" alt="blank image">
+		<img id="die10" src="die1.png" alt="blank image">
+		<img id="die11" src="die1.png" alt="blank image">
+		<img id="die12" src="die1.png" alt="blank image">
+	</p>
+
+	<table id="frequency table" border="1"></table>
+
+	<script type="text/javascript">
+		var die1Count = 0;
+		var die2Count = 0;
+		var die3Count = 0;
+		var die4Count = 0;
+		var die5Count = 0;
+		var die6Count = 0;
+		var totalDice = 0;
+
+		function start()
+		{
+			var button = document.getElementById("rollButton");
+			button.addEventListener("click", rollDice, false);
+		} 
+
+		function rollDice()
+		{
+			for (var i = 1; i <= 12; i++)
+			{
+				var face = Math.floor(1 + Math.random() * 6);
+				setImage(i, face);
+				dieCount(face);
+				updateFrequencyTable();
+				totalDice++;
+			}
+		}
+
+		function setImage(dieNum, face)
+		{
+			var dieImg = document.getElementById("die" + dieNum);
+			dieImg.setAttribute("src", "die" + face + ".png");
+			dieImg.setAttribute("alt", "die image with" + face + "spot(s)");
+		}
+
+		function dieCount(face)
+		{
+			switch(face){
+				case 1:
+					die1Count++;
+					break;
+				case 2: 
+					die2Count++;
+					break;
+				case 3:
+					die3Count++;
+					break;
+				case 4:
+					die4Count++;
+					break;
+				case 5: 
+					die5Count++;
+					break;
+				case 6:
+					die6Count++;
+					break;
+			}
+		}
+		
+		function updateFrequencyTable()
+		{
+			var table = document.getElementById("frequency table");
+            table.innerHTML = "<table>" 
+					+ "<caption>Die Rolling Frequencies</caption>"
+					+ "<tr><th>Face</th>" + "<th>Frequency</th>" + "<th>Percent</th></tr>"
+					+ "<tr><td>1</td>" + "<td>"+die1Count+"</td>" + "<td>" + Math.round((die1Count) / totalDice * 10000)/100 + "%" +"</td></tr>"
+					+ "<tr><td>2</td>" + "<td>"+die2Count+"</td>" + "<td>" + Math.round((die2Count) / totalDice * 10000)/100  + "%" +"</td></tr>"
+					+ "<tr><td>3</td>" + "<td>"+die3Count+"</td>" + "<td>" + Math.round((die3Count) / totalDice * 10000)/100  + "%" +"</td></tr>"
+					+ "<tr><td>4</td>" + "<td>"+die4Count+"</td>" + "<td>" + Math.round((die4Count) / totalDice * 10000)/100  + "%" +"</td></tr>"
+					+ "<tr><td>5</td>" + "<td>"+die5Count+"</td>" + "<td>" + Math.round((die5Count) / totalDice * 10000)/100  + "%" +"</td></tr>"
+					+ "<tr><td>6</td>" + "<td>"+die6Count+"</td>" + "<td>" + Math.round((die6Count) / totalDice * 10000)/100  + "%" +"</td></tr>"
+					
+		}
+
+		window.addEventListener("load", start, false);
+	</script>
+
+</body>
+</html>
