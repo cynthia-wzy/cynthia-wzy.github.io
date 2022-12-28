@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Calculator</title>
+</head>
+<body>
+    <h1>JS Calculator</h1>
+    <p>
+        <div>Number 1</div>
+        <input id="num1">
+    </p>
+    <p>
+        <div>Number 2</div>
+        <input id="num2">
+    </p>
+    <p>
+        <div>Operate way?</div>
+        <select id="op" name="operators" style="width:170px">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </p>
+    
+    <p>
+        <input id="cal" type="button" value="Calculate" style="width:170px">
+    </p>
+    <p>
+        <input id="result" value="" style="border:0">
+    </p>
+
+	<script type="text/javascript">
+
+        function start(){
+            var button = document.getElementById("cal");
+            button.addEventListener("click", calculate, false); 
+        }
+
+        function calculate(){
+            var operator = document.getElementById("op").value;
+            var result;
+
+            if (operator == "+"){
+                result = add();
+                document.getElementById("cal").setAttribute("value", "Add");
+            }else if (operator == "-"){
+                result = sub();
+                document.getElementById("cal").setAttribute("value", "Subtract");
+            }else if (operator == "*"){
+                result = mul();
+                document.getElementById("cal").setAttribute("value", "Mutiply");
+            }else{
+                result = div();
+                document.getElementById("cal").setAttribute("value", "Divide");
+            }
+
+            document.getElementById("result").value = "Result = " +  result;
+        }
+
+        function add(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            return num1 + num2; 
+                
+        }
+
+        function sub(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            return num1 - num2; 
+        }
+
+        function mul(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            return num1 * num2; 
+        }
+
+        function div(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            return num1 / num2; 
+        }
+
+        window.addEventListener("load", start, false);
+
+        </script>
+
+</body>
+</html>
