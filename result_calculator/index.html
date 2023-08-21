@@ -91,6 +91,8 @@
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             var bodyfatPercent = (bodyfat / weight) * 100;
             var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
 
@@ -100,9 +102,9 @@
             // }
 
             // 最大攝氧量
-            var vo2max = 49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5);
+            var vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
             var result2_1 = document.getElementById("result2-1");
-            result2_1.value = "最大攝氧量: " + result1.toString();
+            result2_1.value = "最大攝氧量: " + vo2max.toString();
            
             // 心肺耐力評等
             
