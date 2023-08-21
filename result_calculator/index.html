@@ -107,6 +107,7 @@
             var result2_1 = document.getElementById("result2-1");
             result2_1.value = "最大攝氧量: " + vo2max.toString();
            
+            
             // 換算心肺耐力評等
             var pr;
 
@@ -240,7 +241,6 @@
             }
 
             // 2. 女性
-            // 1. 男性
             switch (true) {
                 case genderNum == 0 && age >= 23 && age <= 24:
                     if (vo2max <= 28.29) {
@@ -369,56 +369,11 @@
                     break;
             }
             
+            var result2_2 = document.getElementById("result2-2");
+            result2_2.value = "心肺耐力評等: " + pr.toString();
+        }
 
         window.addEventListener("load", start2, false);
-
-        // function calculate1(){
-        //     var operator = document.getElementById("op").value;
-        //     var result;
-
-        //     if (operator == "+"){
-        //         result = add();
-        //         document.getElementById("cal").setAttribute("value", "Add");
-        //     }else if (operator == "-"){
-        //         result = sub();
-        //         document.getElementById("cal").setAttribute("value", "Subtract");
-        //     }else if (operator == "*"){
-        //         result = mul();
-        //         document.getElementById("cal").setAttribute("value", "Mutiply");
-        //     }else{
-        //         result = div();
-        //         document.getElementById("cal").setAttribute("value", "Divide");
-        //     }
-
-        //     document.getElementById("result").value = "Result = " +  result;
-        // }
-
-        // function add(){
-        //     var num1 = parseFloat(document.getElementById("num1").value);
-        //     var num2 = parseFloat(document.getElementById("num2").value);
-        //     return num1 + num2; 
-                
-        // }
-
-        // function sub(){
-        //     var num1 = parseFloat(document.getElementById("num1").value);
-        //     var num2 = parseFloat(document.getElementById("num2").value);
-        //     return num1 - num2; 
-        // }
-
-        // function mul(){
-        //     var num1 = parseFloat(document.getElementById("num1").value);
-        //     var num2 = parseFloat(document.getElementById("num2").value);
-        //     return num1 * num2; 
-        // }
-
-        // function div(){
-        //     var num1 = parseFloat(document.getElementById("num1").value);
-        //     var num2 = parseFloat(document.getElementById("num2").value);
-        //     return num1 / num2; 
-        // }
-
-        // window.addEventListener("load", start, false);
 
         </script>
 
