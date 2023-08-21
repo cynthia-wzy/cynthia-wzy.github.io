@@ -111,8 +111,8 @@
             // 換算心肺耐力評等
             var pr;
 
-            // 1. 男性
             switch (true) {
+                // 1. 男性
                 case genderNum == 1 && age >= 23 && age <= 24:
                     if (vo2max <= 34.25) {
                         pr = "PR1-20";
@@ -237,11 +237,8 @@
                     } else {
                         pr = "PR81-99";
                     }
-                break;
-            }
 
-            // 2. 女性
-            switch (true) {
+                // 2. 女性
                 case genderNum == 0 && age >= 23 && age <= 24:
                     if (vo2max <= 28.29) {
                         pr = "PR1-20";
@@ -370,7 +367,7 @@
             }
             
             var result2_2 = document.getElementById("result2-2");
-            result2_2.value = "心肺耐力評等: " + pr.toString();
+            result2_2.value = "心肺耐力評等: " + pr;
         }
 
         window.addEventListener("load", start2, false);
