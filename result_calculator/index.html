@@ -62,11 +62,11 @@
             
             var result1 = (weight / (height/100)**2).toFixed(2);       
             var result1_1 = document.getElementById("result1-1");
-            result1_1.value = result1_1.value + result1.toString();
+            result1_1.value = "BMI: " + result1.toString();
             
             var result2 = ((bodyfat / weight) * 100).toFixed(2);
             var result1_2 = document.getElementById("result1-2");
-            result1_2.value = result1_2.value + result2.toString() + "%";
+            result1_2.value = "體脂率: " + result2.toString() + "%";
         }
 
         window.addEventListener("load", start1, false);
