@@ -1,0 +1,24 @@
+#part1 {
+    background-color: #8B0000;
+    color: white;
+    padding: 10px; /* 可选的内边距，用于控制标题与底色之间的间隔 */
+}
+
+#part2 {
+    background-color: #000080;
+    color: white;
+    padding: 10px; /* 可选的内边距，用于控制标题与底色之间的间隔 */
+}
+
+#gender {
+    width: 170px;
+    height: 23px;
+}
+
+#cal1, #cal2 {
+    width:200px
+}
+
+#result1 input, #result2 input {
+    border: 0;
+}
