@@ -68,10 +68,10 @@
         function calculate2(){
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             var weight = parseFloat(document.getElementById("weight").value);
-            var result =  round((weight / (height/100)**2), 2)
+            var result = round((bodyfat / weight) * 100, 2);
             
             var result1_2 = document.getElementById("result1-2");
-            result1_2.value = result1_2.value + result.toString();
+            result1_2.value = result1_2.value + result.toString() + "%";
         }
 
         window.addEventListener("load", start, false);
