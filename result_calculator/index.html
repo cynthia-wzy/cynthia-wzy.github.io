@@ -58,9 +58,9 @@
         function calculate1(){
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
-            // var bodyfat = parseFloat(document.getElementById("bodyfat").value);
+            var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            var result1 =  round((weight / (height/100)**2), 2);       
+            var result1 =  Math.round((weight / (height/100)**2), 2);       
             var result1_1 = document.getElementById("result1-1");
             result1_1.value = result1_1.value + result1.toString();
             
