@@ -61,7 +61,7 @@
             var result =  weight / (height/100)**2
             
             var result1_1 = document.getElementById("result1-1");
-            result1_1.value = result1_1.value + result.toString();
+            result1_1.value = round((result1_1.value + result.toString()), 2);
         }
 
         window.addEventListener("load", start, false);
