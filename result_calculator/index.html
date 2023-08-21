@@ -96,10 +96,10 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
 
-            // if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
-            //     alert("請確保所有空格都已輸入數字。");
-            //     return;
-            // }
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                alert("請確保所有空格都已輸入數字。");
+                return;
+            }
 
             // 最大攝氧量
             var vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
