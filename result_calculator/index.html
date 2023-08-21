@@ -26,8 +26,8 @@
     </div>
     
     <div id="result1">
-        <p><input id="result1-1" value="BMI: " style="border:0"></p>
-        <p><input id="result1-2" value="體脂率: " style="border:0"></p>
+        <p><input id="result1-1" value="BMI: "></p>
+        <p><input id="result1-2" value="體脂率: "></p>
     </div>
     
     
@@ -60,13 +60,13 @@
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            var result1 =  round((weight / (height/100)**2), 2)        
+            var result1 =  (weight / (height/100)**2)       
             var result1_1 = document.getElementById("result1-1");
-            result1_1.value = result1_1.value + result1.toString();
+            result1_1.textContent = result1_1.textContent + result1.toString();
             
-            var result2 = round((bodyfat / weight) * 100, 2);
-            var result1_2 = document.getElementById("result1-2");
-            result1_2.value = result1_2.value + result2.toString() + "%";
+            // var result2 = round((bodyfat / weight) * 100, 2);
+            // var result1_2 = document.getElementById("result1-2");
+            // result1_2.value = result1_2.value + result2.toString() + "%";
         }
 
         window.addEventListener("load", start1, false);
