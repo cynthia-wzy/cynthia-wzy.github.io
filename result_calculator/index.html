@@ -53,25 +53,20 @@
         function start1(){
             var button = document.getElementById("cal1");
             button.addEventListener("click", calculate1, false);
-            button.addEventListener("click", calculate2, false); 
         }
 
         function calculate1(){
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
-            var result =  round((weight / (height/100)**2), 2)
-            
-            var result1_1 = document.getElementById("result1-1");
-            result1_1.value = result1_1.value + result.toString();
-        }
-
-        function calculate2(){
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
-            var weight = parseFloat(document.getElementById("weight").value);
-            var result = round((bodyfat / weight) * 100, 2);
             
+            var result1 =  round((weight / (height/100)**2), 2)        
+            var result1_1 = document.getElementById("result1-1");
+            result1_1.value = result1_1.value + result1.toString();
+            
+            var result2 = round((bodyfat / weight) * 100, 2);
             var result1_2 = document.getElementById("result1-2");
-            result1_2.value = result1_2.value + result.toString() + "%";
+            result1_2.value = result1_2.value + result2.toString() + "%";
         }
 
         window.addEventListener("load", start1, false);
