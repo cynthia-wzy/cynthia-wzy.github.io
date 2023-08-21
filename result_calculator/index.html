@@ -49,7 +49,8 @@
     
         
 	<script type="text/javascript">
-
+       
+        // 計算BMI與體脂率
         function start1(){
             var button = document.getElementById("cal1");
             button.addEventListener("click", calculate1, false);
@@ -76,6 +77,38 @@
         }
 
         window.addEventListener("load", start1, false);
+
+        // 計算最大攝氧量與心肺耐力評等
+        function start2(){
+            var button = document.getElementById("cal2");
+            button.addEventListener("click", calculate2, false);
+        }
+
+        function calculate2(){
+            var age = parseFloat(document.getElementById("age").value);
+            var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
+            var weight = parseFloat(document.getElementById("weight").value);
+            var bodyfat = parseFloat(document.getElementById("bodyfat").value);
+            var bodyfatPercent = (bodyfat / weight) * 100;
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num4 = parseFloat(document.getElementById("num4").value);
+            var num5 = parseFloat(document.getElementById("num5").value);
+
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num4) || isNaN(num5)) {
+                alert("請確保所有空格都已輸入數字。");
+                return;
+            }
+
+            // 最大攝氧量
+            var vo2max = 49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5);
+            var result2_1 = document.getElementById("result2-1");
+            result2_1.value = "最大攝氧量: " + result1.toString();
+           
+            // 心肺耐力評等:
+            
+        }
+
+        window.addEventListener("load", start2, false);
 
         // function calculate1(){
         //     var operator = document.getElementById("op").value;
