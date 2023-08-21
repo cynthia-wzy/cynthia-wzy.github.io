@@ -4,9 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>menu</title>
+	<title>體適能結果計算機</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
-    <title>體適能結果計算機</title>
 </head>
 <body>
     <h1>體適能結果計算機</h1>
@@ -57,56 +56,63 @@
         }
 
         function calculate1(){
-
-        }
-
-        function calculate1(){
-            var operator = document.getElementById("op").value;
-            var result;
-
-            if (operator == "+"){
-                result = add();
-                document.getElementById("cal").setAttribute("value", "Add");
-            }else if (operator == "-"){
-                result = sub();
-                document.getElementById("cal").setAttribute("value", "Subtract");
-            }else if (operator == "*"){
-                result = mul();
-                document.getElementById("cal").setAttribute("value", "Mutiply");
-            }else{
-                result = div();
-                document.getElementById("cal").setAttribute("value", "Divide");
-            }
-
-            document.getElementById("result").value = "Result = " +  result;
-        }
-
-        function add(){
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            return num1 + num2; 
-                
-        }
-
-        function sub(){
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            return num1 - num2; 
-        }
-
-        function mul(){
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            return num1 * num2; 
-        }
-
-        function div(){
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            return num1 / num2; 
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var result =  weight / (height/100)**2
+            
+            var result1_1 = document.getElementById("result1-1");
+            result1_1.value = result1_1.value + result;
         }
 
         window.addEventListener("load", start, false);
+
+        // function calculate1(){
+        //     var operator = document.getElementById("op").value;
+        //     var result;
+
+        //     if (operator == "+"){
+        //         result = add();
+        //         document.getElementById("cal").setAttribute("value", "Add");
+        //     }else if (operator == "-"){
+        //         result = sub();
+        //         document.getElementById("cal").setAttribute("value", "Subtract");
+        //     }else if (operator == "*"){
+        //         result = mul();
+        //         document.getElementById("cal").setAttribute("value", "Mutiply");
+        //     }else{
+        //         result = div();
+        //         document.getElementById("cal").setAttribute("value", "Divide");
+        //     }
+
+        //     document.getElementById("result").value = "Result = " +  result;
+        // }
+
+        // function add(){
+        //     var num1 = parseFloat(document.getElementById("num1").value);
+        //     var num2 = parseFloat(document.getElementById("num2").value);
+        //     return num1 + num2; 
+                
+        // }
+
+        // function sub(){
+        //     var num1 = parseFloat(document.getElementById("num1").value);
+        //     var num2 = parseFloat(document.getElementById("num2").value);
+        //     return num1 - num2; 
+        // }
+
+        // function mul(){
+        //     var num1 = parseFloat(document.getElementById("num1").value);
+        //     var num2 = parseFloat(document.getElementById("num2").value);
+        //     return num1 * num2; 
+        // }
+
+        // function div(){
+        //     var num1 = parseFloat(document.getElementById("num1").value);
+        //     var num2 = parseFloat(document.getElementById("num2").value);
+        //     return num1 / num2; 
+        // }
+
+        // window.addEventListener("load", start, false);
 
         </script>
 
