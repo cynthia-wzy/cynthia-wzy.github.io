@@ -64,9 +64,9 @@
             var result1_1 = document.getElementById("result1-1");
             result1_1.value = result1_1.value + result1.toString();
             
-            // var result2 = round((bodyfat / weight) * 100, 2);
-            // var result1_2 = document.getElementById("result1-2");
-            // result1_2.value = result1_2.value + result2.toString() + "%";
+            var result2 = ((bodyfat / weight) * 100).toFixed(2);
+            var result1_2 = document.getElementById("result1-2");
+            result1_2.value = result1_2.value + result2.toString() + "%";
         }
 
         window.addEventListener("load", start1, false);
