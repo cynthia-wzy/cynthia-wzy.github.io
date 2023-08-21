@@ -56,10 +56,16 @@
         }
 
         function calculate1(){
+            var age = parseFloat(document.getElementById("age").value);
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
+                alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
+                return;
+            }
+
             var result1 = (weight / (height/100)**2).toFixed(2);       
             var result1_1 = document.getElementById("result1-1");
             result1_1.value = "BMI: " + result1.toString();
