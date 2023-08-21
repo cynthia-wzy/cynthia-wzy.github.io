@@ -1,13 +1,13 @@
 #part1 {
     background-color: #8B0000;
     color: white;
-    padding: 10px; /* 可选的内边距，用于控制标题与底色之间的间隔 */
+    padding: 10px; 
 }
 
 #part2 {
     background-color: #000080;
     color: white;
-    padding: 10px; /* 可选的内边距，用于控制标题与底色之间的间隔 */
+    padding: 10px; 
 }
 
 #gender {
