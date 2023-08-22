@@ -17,7 +17,7 @@
                 <option value="female">女</option>
             </select>
         </p>
-        <p>出生年： <input id="year"></p>
+        <p>出生年 (民國)： <input id="year"></p>
 
         <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
@@ -35,7 +35,7 @@
     
     <h4 id="part2">心肺耐力數據</h4>
     <div>
-        <p>漸進式原地抬膝踏步心率（成人）</p>
+        <p>漸進式原地抬膝踏步心率</p>
         <p>運動第0分鐘心率： <input id="num1"></p>
         <p>運動1分鐘後心率： <input id="num2"></p>
         <p>運動2分鐘後心率： <input id="num3"></p>
@@ -59,7 +59,7 @@
         }
 
         function calculate1(){
-            var currentYear = new Date().getFullYear();
+            var currentYearTW = new Date().getFullYear() - 1911;
             var year = parseFloat(document.getElementById("year").value);
 
             var age = currentYear - year;
@@ -67,7 +67,7 @@
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            // validation(age, weight, height, bodyfat);
+            validation(age, weight, height, bodyfat);
 
             // if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
             //     alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
@@ -83,8 +83,8 @@
             result1_2.textContent = result2.toString() + "%";
 
                    
-            var result1_3 = document.getElementById("result1-3");
-            result1_3.textContent = age.toString();
+            // var result1_3 = document.getElementById("result1-3");
+            // result1_3.textContent = age.toString();
         }
 
         // 計算最大攝氧量與心肺耐力評等 //
@@ -383,8 +383,8 @@
         }
 
         function validation(age, height) {
-            if (!Number.isInteger(age) || age < 23 || age > 64) {
-                alert("年齡：請輸入有效的整數，且範圍須介於23到64之間。");
+            if (!Number.isInteger(age) || age < 23) {
+                alert("出生年：年齡須大於23歲。");
                 return;
             }
 
