@@ -422,6 +422,11 @@
                 return false;
             }
 
+            if (num1 < 50 || num1 > 220 || num2 < 50 || num2 > 220 || num3 < 50 || num3 > 220 || num4 < 50 || num4 > 220 || num5 < 50 || num5 > 220) {
+                alert("漸進式原地抬膝踏步心率：請輸入有效的數字。");
+                return false;
+            }
+
             return true;
         }
 
