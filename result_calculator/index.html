@@ -17,16 +17,16 @@
                 <option value="female">女</option>
             </select>
         </p>
-        <p>出生年 (民國)： <input id="year"></p>
+        <form>
+            <p>出生年 (民國)： <input id="year" type="number"></p>
 
-        <p>年齡： <output id="result1-3" for="cal1"></output></p>
+            <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
-        <!-- <p>身高 (公分)： <input id="height"></p> -->
-        <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
-
-        <p>體重 (公斤)： <input id="weight"></p>
-        <p>全身體脂肪重 (公斤)： <input id="bodyfat"></p>
-        <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
+            <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
+            <p>體重 (公斤)： <input id="weight" type="number" step="0.1" min="20" max="130"></p>
+            <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" step="0.1" max="100"></p>
+            <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
+        </form>
     </div>
     
     <div id="result1">
