@@ -67,7 +67,7 @@
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            validation();
+            // validation(age, weight, height, bodyfat);
 
             // if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
             //     alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
@@ -105,6 +105,8 @@
             var num3 = parseFloat(document.getElementById("num3").value);
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
+
+            validation(age, weight, height, bodyfat, num1, num2, num3, num4, num5);
 
             if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
                 alert("請確保所有空格都已輸入數字。");
