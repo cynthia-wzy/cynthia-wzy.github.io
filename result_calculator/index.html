@@ -22,9 +22,9 @@
 
         <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
-        <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
-        <p>體重 (公斤)： <input id="weight" type="number" step="0.1" min="20" max="130"></p>
-        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" step="0.1" max="100"></p>
+        <p>身高 (公分)： <input id="height" type="number"></p>
+        <p>體重 (公斤)： <input id="weight" type="number"></p>
+        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number"></p>
         <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
         
     </div>
@@ -38,11 +38,11 @@
     <h4 id="part2">心肺耐力數據</h4>
     <div>
         <p>漸進式原地抬膝踏步心率</p>
-        <p>運動第0分鐘心率： <input id="num1"></p>
-        <p>運動1分鐘後心率： <input id="num2"></p>
-        <p>運動2分鐘後心率： <input id="num3"></p>
-        <p>運動3分鐘後心率： <input id="num4"></p>
-        <p>運動結束1分鐘後心率： <input id="num5"></p>
+        <p>運動第0分鐘心率： <input id="num1" type="number"></p>
+        <p>運動1分鐘後心率： <input id="num2" type="number"></p>
+        <p>運動2分鐘後心率： <input id="num3" type="number"></p>
+        <p>運動3分鐘後心率： <input id="num4" type="number"></p>
+        <p>運動結束1分鐘後心率： <input id="num5" type="number"></p>
         <p><input id="cal2" type="button" value="計算最大攝氧量與心肺耐力評等"></p>
     </div>
     
@@ -384,35 +384,36 @@
             result2_2.textContent = pr;
         }
 
-        function validation(age, height, weight, bodyfat, num1, num2, num3, num4, num5) {
+        function validation(age, weight, height, bodyfat, num1, num2, num3, num4, num5) {
             if (!Number.isInteger(age) || age < 23) {
                 alert("出生年：年齡須大於23歲。");
                 return;
             }
 
-            if (isNaN(height) || height < 100 || height > 250) {
+            if (weight < 20 || height > 130) {
+                alert("體重：請輸入有效的數字。");
+                return;
+            }
+
+            if (height < 100 || height > 250) {
                 alert("身高：請輸入有效的數字。");
                 return;
             }
+
+            if (bodyfat > 100) {
+                alert("全身體脂肪重：請輸入有效的數字。");
+                return;
+            }
+
+            if (!Number.isInteger(num1) || !Number.isInteger(num2) || !Number.isInteger(num3) || !Number.isInteger(num4) || !Number.isInteger(num5)) {
+                alert("漸進式原地抬膝踏步心率：請確認數字皆為整數。");
+                return;
+            }
+
         }
 
         window.addEventListener("load", start1, false);
         window.addEventListener("load", start2, false);
-
-        document.getElementById("height").addEventListener("invalid", function(event) {
-            event.preventDefault();
-            alert("請輸入有效的身高數字 (100 到 250 之間)。");
-        });
-
-        document.getElementById("weight").addEventListener("invalid", function(event) {
-            event.preventDefault();
-            alert("請輸入有效的體重數字 (20 到 130 之間)。");
-        });
-
-        document.getElementById("bodyfat").addEventListener("invalid", function(event) {
-            event.preventDefault();
-            alert("請輸入有效的體脂肪重數字 (不超過 100)。");
-        });
 
         </script>
 
