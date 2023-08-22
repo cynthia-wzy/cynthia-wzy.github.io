@@ -29,7 +29,7 @@
     
     <div id="result1">
         <p>BMI： <output id="result1-1" for="cal1"></output></p>
-        <p>體脂率: <output id="result1-2" for="cal1"></output></p>
+        <p>體脂率： <output id="result1-2" for="cal1"></output></p>
     </div>
     
     
@@ -62,7 +62,7 @@
             var currentYearTW = new Date().getFullYear() - 1911;
             var year = parseFloat(document.getElementById("year").value);
 
-            var age = currentYear - year;
+            var age = currentYearTW - year;
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
