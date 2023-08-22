@@ -68,13 +68,15 @@
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
-            
-            validation(age, weight, height, bodyfat);
 
-            // if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
-            //     alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
-            //     return;
-            // }
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
+                alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
+                return;
+            }
+
+            if (!validation(age, weight, height, bodyfat, num1)) {
+                return; // Stop execution if validation fails
+            }
 
             var result1 = (weight / (height/100)**2).toFixed(2);       
             var result1_1 = document.getElementById("result1-1");
@@ -390,7 +392,7 @@
                 return;
             }
 
-            if (weight < 20 || height > 130) {
+            if (weight < 20 || weight > 130) {
                 alert("體重：請輸入有效的數字。");
                 return;
             }
