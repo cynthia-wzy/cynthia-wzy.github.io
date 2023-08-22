@@ -17,17 +17,15 @@
                 <option value="female">女</option>
             </select>
         </p>
-        <form onsubmit="return calculate1()">
-            <p>出生年 (民國)： <input id="year" type="number"></p>
+        
+        <p>出生年 (民國)： <input id="year" type="number"></p>
 
-            <p>年齡： <output id="result1-3" for="cal1"></output></p>
+        <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
-            <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
-            <p>體重 (公斤)： <input id="weight" type="number" step="0.1" min="20" max="130"></p>
-            <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" step="0.1" max="100"></p>
-            <input id="cal1" type="submit" value="計算BMI與體脂率">
-        </form>
-        <!-- <p><input id="cal1" type="button" value="計算BMI與體脂率"></p> -->
+        <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
+        <p>體重 (公斤)： <input id="weight" type="number" step="0.1" min="20" max="130"></p>
+        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" step="0.1" max="100"></p>
+        <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
         
     </div>
     
@@ -71,7 +69,7 @@
             var height = parseFloat(document.getElementById("height").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            // validation(age, weight, height, bodyfat);
+            validation(age, weight, height, bodyfat);
 
             // if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
             //     alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
@@ -400,6 +398,21 @@
 
         window.addEventListener("load", start1, false);
         window.addEventListener("load", start2, false);
+
+        document.getElementById("height").addEventListener("invalid", function(event) {
+            event.preventDefault();
+            alert("請輸入有效的身高數字 (100 到 250 之間)。");
+        });
+
+        document.getElementById("weight").addEventListener("invalid", function(event) {
+            event.preventDefault();
+            alert("請輸入有效的體重數字 (20 到 130 之間)。");
+        });
+
+        document.getElementById("bodyfat").addEventListener("invalid", function(event) {
+            event.preventDefault();
+            alert("請輸入有效的體脂肪重數字 (不超過 100)。");
+        });
 
         </script>
 
