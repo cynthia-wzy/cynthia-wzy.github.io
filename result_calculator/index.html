@@ -21,7 +21,9 @@
 
         <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
-        <p>身高 (公分)： <input id="height"></p>
+        <!-- <p>身高 (公分)： <input id="height"></p> -->
+        <p>身高 (公分)： <input id="height" type="number" step="0.1" min="100" max="250"></p>
+
         <p>體重 (公斤)： <input id="weight"></p>
         <p>全身體脂肪重 (公斤)： <input id="bodyfat"></p>
         <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
@@ -83,8 +85,8 @@
             result1_2.textContent = result2.toString() + "%";
 
                    
-            // var result1_3 = document.getElementById("result1-3");
-            // result1_3.textContent = age.toString();
+            var result1_3 = document.getElementById("result1-3");
+            result1_3.textContent = age.toString();
         }
 
         // 計算最大攝氧量與心肺耐力評等 //
@@ -382,14 +384,14 @@
             result2_2.textContent = pr;
         }
 
-        function validation(age, height) {
+        function validation(age, height, weight, bodyfat, num1, num2, num3, num4, num5) {
             if (!Number.isInteger(age) || age < 23) {
                 alert("出生年：年齡須大於23歲。");
                 return;
             }
 
             if (isNaN(height) || height < 100 || height > 250) {
-                alert("身高：請輸入有效的數字，且範圍須介於100到250之間。");
+                alert("身高：請輸入有效的數字。");
                 return;
             }
         }
