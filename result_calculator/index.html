@@ -70,11 +70,11 @@
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
 
             if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
-                alert("請確保年齡、身高、體重與全身體脂肪重都已輸入數字。");
+                alert("請確保出生年、身高、體重與全身體脂肪重都已輸入數字。");
                 return;
             }
 
-            if (!validation(age, weight, height, bodyfat, num1)) {
+            if (!validation(age, weight, height, bodyfat)) {
                 return; // Stop execution if validation fails
             }
 
@@ -110,10 +110,12 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
 
-            validation(age, weight, height, bodyfat, num1, num2, num3, num4, num5);
-
             if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
                 alert("請確保所有空格都已輸入數字。");
+                return;
+            }
+
+            if (!validation(age, weight, height, bodyfat, num1, num2, num3, num4, num5)){
                 return;
             }
 
@@ -386,19 +388,19 @@
             result2_2.textContent = pr;
         }
 
-        function validation(age, weight, height, bodyfat, num1, num2, num3, num4, num5) {
+        function validation(age, height, weight, bodyfat, num1, num2, num3, num4, num5) {
             if (!Number.isInteger(age) || age < 23) {
                 alert("出生年：年齡須大於23歲。");
                 return;
             }
 
-            if (weight < 20 || weight > 130) {
-                alert("體重：請輸入有效的數字。");
+            if (height < 100 || height > 250) {
+                alert("身高：請輸入有效的數字。");
                 return;
             }
 
-            if (height < 100 || height > 250) {
-                alert("身高：請輸入有效的數字。");
+            if (weight < 20 || weight > 130) {
+                alert("體重：請輸入有效的數字。");
                 return;
             }
 
