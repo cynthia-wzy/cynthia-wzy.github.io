@@ -18,9 +18,9 @@
             </select>
         </p>
         <p>年齡： <input id="age"></p>
-        <p>身高 (cm)： <input id="height"></p>
-        <p>體重 (kg)： <input id="weight"></p>
-        <p>全身體脂肪重 (kg)： <input id="bodyfat"></p>
+        <p>身高 (公分)： <input id="height"></p>
+        <p>體重 (公斤)： <input id="weight"></p>
+        <p>全身體脂肪重 (公斤)： <input id="bodyfat"></p>
         <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
     </div>
     
@@ -42,8 +42,8 @@
     </div>
     
     <div id="result2">
-        <p>最大攝氧量： <input id="result2-1" value=""></p>
-        <p>心肺耐力評等： <input id="result2-2" value=""></p>
+        <p>最大攝氧量： <output id="result2-1" for="cal2"></p>
+        <p>心肺耐力評等： <output id="result2-1" for="cal2"></p>
     </div>
     
         
@@ -104,7 +104,7 @@
             // 計算最大攝氧量 
             var vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
             var result2_1 = document.getElementById("result2-1");
-            result2_1.value = vo2max.toString();
+            result2_1.textContent = vo2max.toString();
            
             
             // 換算心肺耐力評等
@@ -367,7 +367,7 @@
             }
             
             var result2_2 = document.getElementById("result2-2");
-            result2_2.value = pr;
+            result2_2.textContent = pr;
         }
 
         window.addEventListener("load", start2, false);
