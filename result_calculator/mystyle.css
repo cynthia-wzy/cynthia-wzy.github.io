@@ -1,10 +1,10 @@
-h3{
-    color: rgb(197, 197, 197);
+#subtitle {
+    color: #B0B0B0;
     font-style: italic;
 }
 
 h1 {
-    margin-bottom: -18px; 
+    margin-bottom: -10px; 
 }
 
 #part1 {
