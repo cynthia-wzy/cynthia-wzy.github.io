@@ -123,9 +123,9 @@
             var num3 = parseFloat(document.getElementById("num3").value);
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
-           
+        
 
-            // 計算最大攝氧量
+            // 根據不同身分檢查輸入與計算最大攝氧量
             var num4Input = document.getElementById("num4");
             var vo2max;
 
@@ -149,7 +149,7 @@
                 if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
                     return;
                 }
-                
+
                 vo2max = (47.598 - 0.234*age + 1.263*genderNum - 0.264*bodyfatPercent - 0.274*(num3-num2)).toFixed(2);
             }
             
