@@ -99,7 +99,10 @@
         }
 
         function calculate2(){
-            var age = parseFloat(document.getElementById("age").value);
+            var currentYearTW = new Date().getFullYear() - 1911;
+            var year = parseFloat(document.getElementById("year").value);
+
+            var age = currentYearTW - year;
             var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
             var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
