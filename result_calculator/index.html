@@ -423,13 +423,7 @@
                 alert("全身體脂肪重：請輸入有效的數字。");
                 return false;
             }
-
-            height.addEventListener("input", function(event) {
-                if (event.data === "." && this.value.includes(".")) {
-                    event.preventDefault(); 
-                }
-            });
-
+            
             return true;
         }
 
