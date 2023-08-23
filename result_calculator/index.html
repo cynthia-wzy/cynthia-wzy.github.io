@@ -66,8 +66,8 @@
             var year = parseFloat(document.getElementById("year").value);
 
             var age = currentYearTW - year;
-            var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
+            var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
 
             if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
@@ -412,6 +412,12 @@
                 alert("全身體脂肪重：請輸入有效的數字。");
                 return false;
             }
+
+            height.addEventListener("keydown", function(event) {
+                if (event.key === "." && this.value.includes(".")) {
+                    event.preventDefault(); 
+                }
+            });
 
             return true;
         }
