@@ -19,6 +19,10 @@ h1 {
     padding: 10px; 
 }
 
+#p2Title{
+    font-weight: bold;
+}
+
 #gender {
     width: 170px;
     height: 23px;
