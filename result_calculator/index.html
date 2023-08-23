@@ -59,6 +59,13 @@
         function start1(){
             var button = document.getElementById("cal1");
             button.addEventListener("click", calculate1, false);
+
+            var heightInput = document.getElementById("height");
+            heightInput.addEventListener("input", function(event) {
+                if (event.data === "." && this.value.includes(".")) {
+                    event.preventDefault();
+                }
+            });
         }
 
         function calculate1(){
@@ -69,7 +76,7 @@
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
-
+            
             if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat)) {
                 alert("請確保出生年、身高、體重與全身體脂肪重都已輸入數字。");
                 return;
@@ -394,7 +401,7 @@
 
         function validationPart1(age, height, weight, bodyfat) {
             if (!Number.isInteger(age) || age < 23) {
-                alert("出生年：年齡須大於23歲。");
+                alert("出生年：年齡須為整數且大於23歲。");
                 return false;
             }
 
