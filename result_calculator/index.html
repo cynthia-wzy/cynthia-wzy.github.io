@@ -70,7 +70,7 @@
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
 
-            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat)) {
+            if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat)) {
                 alert("請確保出生年、身高、體重與全身體脂肪重都已輸入數字。");
                 return;
             }
@@ -104,8 +104,8 @@
 
             var age = currentYearTW - year;
             var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
-            var weight = parseFloat(document.getElementById("weight").value);
             var height = parseFloat(document.getElementById("height").value);
+            var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             var bodyfatPercent = (bodyfat / weight) * 100;
             var num1 = parseFloat(document.getElementById("num1").value);
@@ -114,7 +114,7 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
 
-            if (isNaN(age) || isNaN(weight) || isNaN(height) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+            if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
                 alert("請確保所有空格都已輸入數字。");
                 return;
             }
@@ -413,8 +413,8 @@
                 return false;
             }
 
-            height.addEventListener("keydown", function(event) {
-                if (event.key === "." && this.value.includes(".")) {
+            height.addEventListener("input", function(event) {
+                if (event.data === "." && this.value.includes(".")) {
                     event.preventDefault(); 
                 }
             });
