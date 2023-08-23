@@ -77,6 +77,16 @@
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
+            // 判斷為成年人還是銀髮族
+            if (age > 64) {
+                var num4Input = document.getElementById("num4");
+                num4Input.disabled = true;
+            } else {
+                var num4Input = document.getElementById("num4");
+                num4Input.disabled = false;
+            }
+
+            // 判斷使用者輸入是否合法
             if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat)) {
                 alert("請確保出生年、身高、體重與全身體脂肪重都已輸入數字。");
                 return;
@@ -121,6 +131,7 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
 
+            // 判斷使用者輸入是否合法
             if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
                 alert("請確保所有空格都已輸入數字。");
                 return;
