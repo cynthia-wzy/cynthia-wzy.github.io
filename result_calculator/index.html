@@ -9,8 +9,8 @@
 <body>
     <h1>體適能結果計算機</h1>
     <p id="subtitle">©2023體適能專案辦公室</p>
-    <p>請輸入以下資訊...</p>
-    <h4 id="part1">身體基本數據</h4>
+    <p>請輸入以下資訊，並在計算第二部分前先完成計算第一部分</p>
+    <h3 id="part1">第一部分：身體基本數據</h3>
     <div>
         <p>性別： 
             <select id="gender">
@@ -36,13 +36,13 @@
     </div>
     
     
-    <h4 id="part2">心肺耐力數據</h4>
+    <h3 id="part2">第二部分：心肺耐力數據</h3>
     <div>
-        <p>漸進式原地抬膝踏步心率</p>
+        <p id="p2Title">漸進式原地抬膝踏步心率</p>
         <p>運動第0分鐘心率： <input id="num1" type="number"></p>
         <p>運動1分鐘後心率： <input id="num2" type="number"></p>
         <p>運動2分鐘後心率： <input id="num3" type="number"></p>
-        <p>運動3分鐘後心率： <input id="num4" type="number"></p>
+        <p>運動3分鐘後心率： <input id="num4" type="number"> （65歲以上免填）</p>
         <p>運動結束1分鐘後心率： <input id="num5" type="number"></p>
         <p><input id="cal2" type="button" value="計算最大攝氧量與心肺耐力評等"></p>
     </div>
@@ -134,273 +134,287 @@
                 return;
             }
 
-            // 計算最大攝氧量 
-            var vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
-            var result2_1 = document.getElementById("result2-1");
-            result2_1.textContent = vo2max.toString();
-           
-            
-            // 換算心肺耐力評等
-            var pr;
+            // 計算最大攝氧量
+            var num4Input = document.getElementById("num4");
+            var vo2max;
 
-            switch (true) {
-                // 1. 男性
-                case genderNum == 1 && age >= 23 && age <= 24:
-                    if (vo2max <= 34.25) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 37.09 && vo2max >= 34.26) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 39.44 && vo2max >= 37.10) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 42.80 && vo2max >= 39.45) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 25 && age <= 29:
-                    if (vo2max <= 33.30) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 36.21 && vo2max >= 33.31) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 38.76 && vo2max >= 36.22) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 41.66 && vo2max >= 38.77) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 30 && age <= 34:
-                    if (vo2max <= 32.25) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 35.23 && vo2max >= 32.26) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 37.58 && vo2max >= 35.24) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 40.33 && vo2max >= 37.59) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 35 && age <= 39:
-                    if (vo2max <= 31.04) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 34.21 && vo2max >= 31.05) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 36.49 && vo2max >= 34.22) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 39.58 && vo2max >= 36.50) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 40 && age <= 44:
-                    if (vo2max <= 30.64) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 33.40 && vo2max >= 30.65) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 35.82 && vo2max >= 33.41) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 38.61 && vo2max >= 35.83) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 45 && age <= 49:
-                    if (vo2max <= 30.11) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 32.55 && vo2max >= 30.12) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 34.74 && vo2max >= 32.56) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 38.00 && vo2max >= 34.75) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 50 && age <= 54:
-                    if (vo2max <= 29.62) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 31.82 && vo2max >= 29.63) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 34.01 && vo2max >= 31.83) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 36.77 && vo2max >= 34.02) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 55 && age <= 59:
-                    if (vo2max <= 29.02) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 31.69 && vo2max >= 29.03) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 33.91 && vo2max >= 31.70) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 36.67 && vo2max >= 33.92) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 1 && age >= 60 && age <= 64:
-                    if (vo2max <= 28.53) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 30.81 && vo2max >= 28.54) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 32.66 && vo2max >= 30.82) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 35.48 && vo2max >= 32.67) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                // 2. 女性
-                case genderNum == 0 && age >= 23 && age <= 24:
-                    if (vo2max <= 28.29) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 31.25 && vo2max >= 28.30) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 33.68 && vo2max >= 31.26) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 36.94 && vo2max >= 33.69) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 25 && age <= 29:
-                    if (vo2max <= 27.29) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 30.48 && vo2max >= 27.30) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 32.98 && vo2max >= 30.49) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 35.78 && vo2max >= 32.99) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 30 && age <= 34:
-                    if (vo2max <= 27.06) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 30.13 && vo2max >= 27.07) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 32.48 && vo2max >= 30.14) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 35.56 && vo2max >= 32.49) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 35 && age <= 39:
-                    if (vo2max <= 26.17) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 29.14 && vo2max >= 26.18) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 31.70 && vo2max >= 29.15) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 34.49 && vo2max >= 31.71) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 40 && age <= 44:
-                    if (vo2max <= 26.13) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 28.86 && vo2max >= 26.14) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 31.21 && vo2max >= 28.87) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 34.11 && vo2max >= 31.22) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 45 && age <= 49:
-                    if (vo2max <= 25.14) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 28.04 && vo2max >= 25.15) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 30.28 && vo2max >= 28.05) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 32.77 && vo2max >= 30.29) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 50 && age <= 54:
-                    if (vo2max <= 24.12) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 27.04 && vo2max >= 24.13) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 29.31 && vo2max >= 27.05) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 32.16 && vo2max >= 29.32) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 55 && age <= 59:
-                    if (vo2max <= 23.73) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 26.40 && vo2max >= 23.74) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 28.74 && vo2max >= 26.41) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 31.45 && vo2max >= 28.75) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
-
-                case genderNum == 0 && age >= 60 && age <= 64:
-                    if (vo2max <= 23.13) {
-                        pr = "PR1-20";
-                    } else if (vo2max <= 25.60 && vo2max >= 23.14) {
-                        pr = "PR21-40";
-                    } else if (vo2max <= 27.92 && vo2max >= 25.61) {
-                        pr = "PR41-60";
-                    } else if (vo2max <= 30.37 && vo2max >= 27.93) {
-                        pr = "PR61-80";
-                    } else {
-                        pr = "PR81-99";
-                    }
-                    break;
+            if (!num4Input.disabled) { // 成年人
+                vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
+            } else { // 銀髮族
+                vo2max = (47.598 - 0.234*age + 1.263*genderNum - 0.264*bodyfatPercent - 0.274*(num3-num2)).toFixed(2);
             }
             
+            var result2_1 = document.getElementById("result2-1");
+            result2_1.textContent = vo2max.toString();
+            
+
+            // 換算心肺耐力評等
             var result2_2 = document.getElementById("result2-2");
-            result2_2.textContent = pr;
+
+            if (!num4Input.disabled) { // 成年人
+                var pr;
+
+                switch (true) {
+                    // 1. 男性
+                    case genderNum == 1 && age >= 23 && age <= 24:
+                        if (vo2max <= 34.25) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 37.09 && vo2max >= 34.26) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 39.44 && vo2max >= 37.10) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 42.80 && vo2max >= 39.45) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 25 && age <= 29:
+                        if (vo2max <= 33.30) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 36.21 && vo2max >= 33.31) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 38.76 && vo2max >= 36.22) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 41.66 && vo2max >= 38.77) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 30 && age <= 34:
+                        if (vo2max <= 32.25) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 35.23 && vo2max >= 32.26) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 37.58 && vo2max >= 35.24) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 40.33 && vo2max >= 37.59) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 35 && age <= 39:
+                        if (vo2max <= 31.04) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 34.21 && vo2max >= 31.05) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 36.49 && vo2max >= 34.22) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 39.58 && vo2max >= 36.50) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 40 && age <= 44:
+                        if (vo2max <= 30.64) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 33.40 && vo2max >= 30.65) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 35.82 && vo2max >= 33.41) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 38.61 && vo2max >= 35.83) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 45 && age <= 49:
+                        if (vo2max <= 30.11) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 32.55 && vo2max >= 30.12) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 34.74 && vo2max >= 32.56) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 38.00 && vo2max >= 34.75) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 50 && age <= 54:
+                        if (vo2max <= 29.62) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 31.82 && vo2max >= 29.63) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 34.01 && vo2max >= 31.83) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 36.77 && vo2max >= 34.02) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 55 && age <= 59:
+                        if (vo2max <= 29.02) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 31.69 && vo2max >= 29.03) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 33.91 && vo2max >= 31.70) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 36.67 && vo2max >= 33.92) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 1 && age >= 60 && age <= 64:
+                        if (vo2max <= 28.53) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 30.81 && vo2max >= 28.54) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 32.66 && vo2max >= 30.82) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 35.48 && vo2max >= 32.67) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    // 2. 女性
+                    case genderNum == 0 && age >= 23 && age <= 24:
+                        if (vo2max <= 28.29) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 31.25 && vo2max >= 28.30) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 33.68 && vo2max >= 31.26) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 36.94 && vo2max >= 33.69) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 25 && age <= 29:
+                        if (vo2max <= 27.29) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 30.48 && vo2max >= 27.30) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 32.98 && vo2max >= 30.49) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 35.78 && vo2max >= 32.99) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 30 && age <= 34:
+                        if (vo2max <= 27.06) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 30.13 && vo2max >= 27.07) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 32.48 && vo2max >= 30.14) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 35.56 && vo2max >= 32.49) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 35 && age <= 39:
+                        if (vo2max <= 26.17) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 29.14 && vo2max >= 26.18) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 31.70 && vo2max >= 29.15) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 34.49 && vo2max >= 31.71) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 40 && age <= 44:
+                        if (vo2max <= 26.13) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 28.86 && vo2max >= 26.14) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 31.21 && vo2max >= 28.87) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 34.11 && vo2max >= 31.22) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 45 && age <= 49:
+                        if (vo2max <= 25.14) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 28.04 && vo2max >= 25.15) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 30.28 && vo2max >= 28.05) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 32.77 && vo2max >= 30.29) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 50 && age <= 54:
+                        if (vo2max <= 24.12) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 27.04 && vo2max >= 24.13) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 29.31 && vo2max >= 27.05) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 32.16 && vo2max >= 29.32) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 55 && age <= 59:
+                        if (vo2max <= 23.73) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 26.40 && vo2max >= 23.74) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 28.74 && vo2max >= 26.41) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 31.45 && vo2max >= 28.75) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+
+                    case genderNum == 0 && age >= 60 && age <= 64:
+                        if (vo2max <= 23.13) {
+                            pr = "PR1-20";
+                        } else if (vo2max <= 25.60 && vo2max >= 23.14) {
+                            pr = "PR21-40";
+                        } else if (vo2max <= 27.92 && vo2max >= 25.61) {
+                            pr = "PR41-60";
+                        } else if (vo2max <= 30.37 && vo2max >= 27.93) {
+                            pr = "PR61-80";
+                        } else {
+                            pr = "PR81-99";
+                        }
+                        break;
+                }
+                
+                result2_2.textContent = pr;
+
+            } else { // 銀髮族
+                result2_2.textContent = "轉換方式尚未制定";
+            }   
         }
 
         function validationPart1(age, height, weight, bodyfat) {
@@ -423,7 +437,7 @@
                 alert("全身體脂肪重：請輸入有效的數字。");
                 return false;
             }
-            
+
             return true;
         }
 
