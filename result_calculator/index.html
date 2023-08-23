@@ -123,24 +123,33 @@
             var num3 = parseFloat(document.getElementById("num3").value);
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
-
-            // 判斷使用者輸入是否合法
-            if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
-                alert("請確保所有空格都已輸入數字。");
-                return;
-            }
-
-            if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
-                return;
-            }
+           
 
             // 計算最大攝氧量
             var num4Input = document.getElementById("num4");
             var vo2max;
 
             if (!num4Input.disabled) { // 成年人
+                if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                    alert("請確保所有空格都已輸入數字。");
+                    return;
+                }
+                
+                if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
+                    return;
+                }
+
                 vo2max = (49.357 - 0.143*age + 3.084*genderNum - 0.348*bodyfatPercent - 0.107*num1+ 0.259*(num4-num5)).toFixed(2);
             } else { // 銀髮族
+                if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num5)) {
+                    alert("請確保所有空格都已輸入數字。");
+                    return;
+                }
+
+                if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
+                    return;
+                }
+                
                 vo2max = (47.598 - 0.234*age + 1.263*genderNum - 0.264*bodyfatPercent - 0.274*(num3-num2)).toFixed(2);
             }
             
