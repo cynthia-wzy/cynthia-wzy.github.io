@@ -18,16 +18,12 @@
                 <option value="female">女</option>
             </select>
         </p>
-        
-        <!-- <p>出生年 (民國)： <input id="year" type="number"></p> -->
 
         <p>出生年 (民國)：
             <select id="birthYear">
                 <!-- 使用 JavaScript 生成選項 -->
             </select>
         </p>
-
-        <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
         <p>身高 (公分)： <input id="height" type="number"></p>
         <p>體重 (公斤)： <input id="weight" type="number"></p>
@@ -80,9 +76,7 @@
         }
 
         function calculate1(){
-            // var currentYearTW = new Date().getFullYear() - 1911;
             var selectedYear = parseFloat(document.getElementById("birthYear").value); 
-            // var year = parseFloat(document.getElementById("year").value);
             var age = currentYearTW - selectedYear;
 
             var height = parseFloat(document.getElementById("height").value);
@@ -99,12 +93,12 @@
             }
 
             // 判斷使用者輸入是否合法
-            if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat)) {
-                alert("請確保出生年、身高、體重與全身體脂肪重都已輸入數字。");
+            if (isNaN(height) || isNaN(weight) || isNaN(bodyfat)) {
+                alert("請確保身高、體重與全身體脂肪重都已輸入數字。");
                 return;
             }
 
-            if (!validationPart1(age, height, weight, bodyfat)) {
+            if (!validationPart1(height, weight, bodyfat)) {
                 return; // Stop execution if validation fails
             }
 
@@ -115,10 +109,6 @@
             var result2 = ((bodyfat / weight) * 100).toFixed(2);
             var result1_2 = document.getElementById("result1-2");
             result1_2.textContent = result2.toString() + "%";
-
-                   
-            var result1_3 = document.getElementById("result1-3");
-            result1_3.textContent = age.toString();
         }
 
         // 計算最大攝氧量與心肺耐力評等 //
@@ -128,12 +118,9 @@
         }
 
         function calculate2(){
-            // var currentYearTW = new Date().getFullYear() - 1911;
-            // var year = parseFloat(document.getElementById("year").value);
             var selectedYear = parseFloat(document.getElementById("birthYear").value); 
             var age = currentYearTW - selectedYear;
 
-            // var age = currentYearTW - year;
             var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
@@ -145,18 +132,18 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
         
-
+            
             // 根據不同身分檢查輸入與計算最大攝氧量
             var num4Input = document.getElementById("num4");
             var vo2max;
 
             if (!num4Input.disabled) { // 成年人
-                if (isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                if (isNaN(height) || isNaN(weight) || isNaN(bodyfat) || isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
                     alert("請確保所有空格都已輸入數字。");
                     return;
                 }
                 
-                if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
+                if (!validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5)){
                     return;
                 }
 
@@ -447,12 +434,7 @@
             }   
         }
 
-        function validationPart1(age, height, weight, bodyfat) {
-            if (!Number.isInteger(age) || age < 23) {
-                alert("出生年：年齡須為整數且大於23歲。");
-                return false;
-            }
-
+        function validationPart1(height, weight, bodyfat) {
             if (height < 100 || height > 250) {
                 alert("身高：請輸入有效的數字。");
                 return false;
@@ -471,8 +453,8 @@
             return true;
         }
 
-        function validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5) {
-            if (!validationPart1(age, height, weight, bodyfat)) {
+        function validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5) {
+            if (!validationPart1(height, weight, bodyfat)) {
                 return false;
             }
 
