@@ -38,13 +38,14 @@ h1 {
 }
 
 #cal1, #cal2 {
-    width:250px;
+    width:70px;
     height: 28px;
     border: none;
     background-color: #909090;
-    font-size: 14px;
+    font-size: 13px;
     color: white;
-    border-radius: 8px;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 #result1 input, #result2 input {
