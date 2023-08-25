@@ -66,7 +66,7 @@
 
         // 生成選項加到下拉式選單
         var selectElement = document.getElementById("birthYear");
-        for (var year = startYear; year <= endYear; year++) {
+        for (var year = endYear; year >= startYear; year--) {
             var option = document.createElement("option");
             option.value = year;
             option.textContent = year;
@@ -81,8 +81,9 @@
 
         function calculate1(){
             // var currentYearTW = new Date().getFullYear() - 1911;
-            var year = parseFloat(document.getElementById("year").value);
-            var age = currentYearTW - year;
+            var selectedYear = parseFloat(document.getElementById("birthYear").value); 
+            // var year = parseFloat(document.getElementById("year").value);
+            var age = currentYearTW - selectedYear;
 
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
@@ -127,10 +128,12 @@
         }
 
         function calculate2(){
-            var currentYearTW = new Date().getFullYear() - 1911;
-            var year = parseFloat(document.getElementById("year").value);
+            // var currentYearTW = new Date().getFullYear() - 1911;
+            // var year = parseFloat(document.getElementById("year").value);
+            var selectedYear = parseFloat(document.getElementById("birthYear").value); 
+            var age = currentYearTW - selectedYear;
 
-            var age = currentYearTW - year;
+            // var age = currentYearTW - year;
             var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
