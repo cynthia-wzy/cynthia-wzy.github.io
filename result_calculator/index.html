@@ -25,9 +25,9 @@
             </select>
         </p>
 
-        <p>身高 (公分)： <input id="height" type="number"></p>
-        <p>體重 (公斤)： <input id="weight" type="number"></p>
-        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number"></p>
+        <p>身高 (公分)： <input id="height" type="number" min="100" max="250"></p>
+        <p>體重 (公斤)： <input id="weight" type="number" min="20" max="130"></p>
+        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" max="100"></p>
         <p><input id="cal1" type="button" value="計算BMI與體脂率"></p>
         
     </div>
@@ -132,7 +132,7 @@
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
         
-            
+
             // 根據不同身分檢查輸入與計算最大攝氧量
             var num4Input = document.getElementById("num4");
             var vo2max;
