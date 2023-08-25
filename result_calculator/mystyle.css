@@ -28,6 +28,11 @@ h1 {
     height: 23px;
 }
 
+#birthYear{
+    width: 170px;
+    height: 23px;
+}
+
 #cal1, #cal2 {
     width:200px
 }
