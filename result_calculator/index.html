@@ -19,7 +19,13 @@
             </select>
         </p>
         
-        <p>出生年 (民國)： <input id="year" type="number"></p>
+        <!-- <p>出生年 (民國)： <input id="year" type="number"></p> -->
+
+        <p>出生年 (民國)：
+            <select id="birthYear">
+                <!-- 使用 JavaScript 生成選項 -->
+            </select>
+        </p>
 
         <p>年齡： <output id="result1-3" for="cal1"></output></p>
 
@@ -54,7 +60,19 @@
     
         
 	<script type="text/javascript">
-       
+        var currentYearTW = new Date().getFullYear() - 1911;
+        var startYear = currentYearTW - 110;
+        var endYear = currentYearTW - 23;
+
+        // 生成選項加到下拉式選單
+        var selectElement = document.getElementById("birthYear");
+        for (var year = startYear; year <= endYear; year++) {
+            var option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            selectElement.appendChild(option);
+        }
+
         // 計算BMI與體脂率 //
         function start1(){
             var button = document.getElementById("cal1");
@@ -62,10 +80,10 @@
         }
 
         function calculate1(){
-            var currentYearTW = new Date().getFullYear() - 1911;
+            // var currentYearTW = new Date().getFullYear() - 1911;
             var year = parseFloat(document.getElementById("year").value);
-
             var age = currentYearTW - year;
+
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
