@@ -157,6 +157,7 @@
             var selectedYear = parseFloat(document.getElementById("birthYear").value); 
             var age = currentYearTW - selectedYear;
 
+            var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
             var height = parseFloat(document.getElementById("height").value);
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
