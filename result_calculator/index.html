@@ -129,7 +129,8 @@
             </tbody>
         </table>
     </p>
-        
+    
+
 	<script type="text/javascript">
         var previousHighlightedCell;
         
@@ -179,9 +180,27 @@
                 return; // Stop execution if validation fails
             }
 
-            var result1 = (weight / (height/100)**2).toFixed(2);       
+            var result1 = (weight / (height/100)**2).toFixed(2);
+            
+            // 判斷bmi評等
+            var bmiRating; 
+            if (result1 < 18.5 && result1 >= 0) {
+                bmiRating = "過瘦";
+            } else if (result1 < 24) {
+                bmiRating = "正常";
+            } else if (result1 < 27) {
+                bmiRating = "過重";
+            } else if (result1 < 30) {
+                bmiRating = "輕度肥胖";
+            } else if (result1 < 35) {
+                bmiRating = "中度肥胖";
+            } else {
+                bmiRating = "重度肥胖";
+            }
+            
+            
             var result1_1 = document.getElementById("result1-1");
-            result1_1.textContent = result1.toString();
+            result1_1.textContent = result1.toString() + " (" + bmiRating + ")";
             
             var result2 = ((bodyfat / weight) * 100).toFixed(2);
             var result1_2 = document.getElementById("result1-2");
