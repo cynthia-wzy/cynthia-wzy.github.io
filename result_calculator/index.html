@@ -180,6 +180,7 @@
                 return; // Stop execution if validation fails
             }
 
+            // 計算BMI
             var result1 = (weight / (height/100)**2).toFixed(2);
             
             // 判斷bmi評等
@@ -198,13 +199,149 @@
                 bmiRating = "重度肥胖";
             }
             
-            
             var result1_1 = document.getElementById("result1-1");
             result1_1.textContent = result1.toString() + " (" + bmiRating + ")";
             
+            // 計算體脂率
             var result2 = ((bodyfat / weight) * 100).toFixed(2);
+
+            // 判斷體脂率評等 https://w.tw.mawebcenters.com/TeamIPC/%E5%B8%B8%E6%A8%A1%E6%AA%A2%E6%B8%AC.html
+            var bodyfatRating;
+
+            switch (true) {
+                // 1. 男性
+                case genderNum == 1 && age <= 29:
+                    if (result2 < 3) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 13) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 18.0 && result2 >= 13.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 23.0 && result2 >= 18.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 28.0 && result2 >= 23.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 1 && age <= 39  && age >= 30:
+                    if (result2 < 3) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 14) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 19.0 && result2 >= 14.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 24.0 && result2 >= 19.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 29.0 && result2 >= 24.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 1 && age <= 49  && age >= 40:
+                    if (result2 < 3) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 15) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 20.0 && result2 >= 15.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 25.0 && result2 >= 20.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 30.0 && result2 >= 25.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 1 && age >= 50:
+                    if (result2 < 3) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 16) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 21.0 && result2 >= 16.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 26.0 && result2 >= 21.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 31.0 && result2 >= 26.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                // 2. 女性
+                case genderNum == 0 && age <= 29:
+                    if (result2 < 12) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 18) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 23.0 && result2 >= 18.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 28.0 && result2 >= 23.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 33.0 && result2 >= 28.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 0 && age <= 39  && age >= 30:
+                    if (result2 < 12) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 19) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 24.0 && result2 >= 19.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 29.0 && result2 >= 24.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 34.0 && result2 >= 29.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 0 && age <= 49  && age >= 40:
+                    if (result2 < 12) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 20) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 25.0 && result2 >= 20.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 30.0 && result2 >= 25.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 35.0 && result2 >= 30.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+
+                case genderNum == 0 && age >= 50:
+                    if (result2 < 12) {
+                        bodyfatRating = "過低";
+                    } else if (result2 <= 21) {
+                        bodyfatRating = "良好";                        
+                    } else if (result2 <= 26.0 && result2 >= 21.1) {
+                        bodyfatRating = "很好";
+                    } else if (result2 <= 31.0 && result2 >= 26.1) {
+                        bodyfatRating = "普通";
+                    } else if (result2 <= 36.0 && result2 >= 31.1) {
+                        bodyfatRating = "過多";
+                    } else {
+                        bodyfatRating = "肥胖";
+                    }
+                    break;
+            }
+
             var result1_2 = document.getElementById("result1-2");
-            result1_2.textContent = result2.toString() + "%";
+            result1_2.textContent = result2.toString() + "%" + " (" + bodyfatRating + ")";
         }
 
         // 計算最大攝氧量與心肺耐力評等 //
@@ -516,7 +653,7 @@
                             targetCellSelector = "table:nth-of-type(2) tr:nth-child(5) td:nth-child(6)";
                         }
                         break;
-
+                    
                     case genderNum == 0 && age >= 40 && age <= 44:
                         if (vo2max <= 26.13) {
                             pr = "PR1-20";
