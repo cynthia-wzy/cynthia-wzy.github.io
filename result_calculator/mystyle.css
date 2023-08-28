@@ -23,7 +23,7 @@ h1 {
     width: 170px;
 }
 
-#p2Title{
+#p2Title, caption{
     font-weight: bold;
 }
 
