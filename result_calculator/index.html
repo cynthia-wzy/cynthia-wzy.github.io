@@ -37,9 +37,27 @@
         <p>體脂率： <output id="result1-2" for="cal1"></output></p>
     </div>
     
+    
+    <h4 id="part2">第二部分：心肺耐力數據</h4>
+    <div>
+        <p id="p2Title">漸進式原地抬膝踏步心率</p>
+        <p>運動第0分鐘心率： <input id="num1" type="number" min="50" max="220"></p>
+        <p>運動1分鐘後心率： <input id="num2" type="number" min="50" max="220"></p>
+        <p>運動2分鐘後心率： <input id="num3" type="number" min="50" max="220"></p>
+        <p>運動3分鐘後心率： <input id="num4" type="number" min="50" max="220"> （65歲以上免填）</p>
+        <p>運動結束1分鐘後心率： <input id="num5" type="number" min="50" max="220"></p>
+        <p><input id="cal2" type="button" value="計算"></p>
+    </div>
+    
+    <div id="result2">
+        <p>最大攝氧量估計值： <output id="result2-1" for="cal2"></p>
+        <p>心肺耐力評等： <output id="result2-2" for="cal2"></p>
+    </div>
+
     <table>
+        <caption>男性常模 (23-64歲)</caption>
         <tbody>
-          <tr>男性常模
+          <tr>
             <td>五分等級</td><td>PR1-20</td><td>PR21-40</td><td>PR41-60</td><td>PR61-80</td><td>PR81-99</td>
           </tr>
           <tr>
@@ -70,23 +88,7 @@
             <td>60-64歲</td><td>~28.53</td><td>28.54~30.81</td><td>30.82~32.66</td><td>32.67~35.48</td><td>35.49~</td>
           </tr>
         </tbody>
-      </table>
-    
-    <h4 id="part2">第二部分：心肺耐力數據</h4>
-    <div>
-        <p id="p2Title">漸進式原地抬膝踏步心率</p>
-        <p>運動第0分鐘心率： <input id="num1" type="number" min="50" max="220"></p>
-        <p>運動1分鐘後心率： <input id="num2" type="number" min="50" max="220"></p>
-        <p>運動2分鐘後心率： <input id="num3" type="number" min="50" max="220"></p>
-        <p>運動3分鐘後心率： <input id="num4" type="number" min="50" max="220"> （65歲以上免填）</p>
-        <p>運動結束1分鐘後心率： <input id="num5" type="number" min="50" max="220"></p>
-        <p><input id="cal2" type="button" value="計算"></p>
-    </div>
-    
-    <div id="result2">
-        <p>最大攝氧量估計值： <output id="result2-1" for="cal2"></p>
-        <p>心肺耐力評等： <output id="result2-2" for="cal2"></p>
-    </div>
+    </table>
     
         
 	<script type="text/javascript">
