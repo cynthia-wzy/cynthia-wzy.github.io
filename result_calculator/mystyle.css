@@ -23,7 +23,7 @@ h1 {
     width: 170px;
 }
 
-#p2Title, caption{
+#p2Title, caption, table tr td:first-child {
     font-weight: bold;
 }
 
