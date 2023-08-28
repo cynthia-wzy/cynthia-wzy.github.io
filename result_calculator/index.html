@@ -212,14 +212,19 @@
                     case genderNum == 1 && age >= 23 && age <= 24:
                         if (vo2max <= 34.25) {
                             pr = "PR1-20";
+                            targetCellSelector = "tr:nth-child(2) td:nth-child(2)";
                         } else if (vo2max <= 37.09 && vo2max >= 34.26) {
                             pr = "PR21-40";
+                            targetCellSelector = "tr:nth-child(2) td:nth-child(3)";
                         } else if (vo2max <= 39.44 && vo2max >= 37.10) {
                             pr = "PR41-60";
+                            targetCellSelector = "tr:nth-child(2) td:nth-child(4)";
                         } else if (vo2max <= 42.80 && vo2max >= 39.45) {
                             pr = "PR61-80";
+                            targetCellSelector = "tr:nth-child(2) td:nth-child(5)";
                         } else {
                             pr = "PR81-99";
+                            targetCellSelector = "tr:nth-child(2) td:nth-child(6)";
                         }
                         break;
 
@@ -464,6 +469,11 @@
                 }
                 
                 result2_2.textContent = pr;
+
+                var targetCell = document.querySelector(targetCellSelector);
+                if (targetCell) {
+                    targetCell.classList.add("highlighted-cell"); // 添加CSS类以应用样式
+                }
 
             } else { // 銀髮族
                 result2_2.textContent = "轉換方式尚未制定";
