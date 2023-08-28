@@ -63,9 +63,9 @@ padding: 5px;
 text-align: center;
 }
 
-/* th {
-    background-color: #ea2e2e; 
-} */
+th {
+    background-color: #96bbee; 
+}
 
 .highlighted-cell {
     background-color: #FFD700;
