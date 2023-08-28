@@ -57,12 +57,16 @@ table {
     border: 1px solid black;
   }
   
-td {
+th, td {
 border: 1px solid black;
 padding: 5px;
 text-align: center;
 }
 
-th {
-    background-color: #ea2e2e; /* 設定表頭的背景顏色 */
+/* th {
+    background-color: #ea2e2e; 
+} */
+
+.highlighted-cell {
+    background-color: #E0FFFF;
 }
