@@ -92,6 +92,8 @@
     
         
 	<script type="text/javascript">
+        var previousHighlightedCell;
+        
         var currentYearTW = new Date().getFullYear() - 1911;
         var startYear = currentYearTW - 110;
         var endYear = currentYearTW - 23;
@@ -206,7 +208,6 @@
 
             if (!num4Input.disabled) { // 成年人
                 var pr;
-                var previousHighlightedCell;
 
                 switch (true) {
                     // 1. 男性
