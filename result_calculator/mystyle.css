@@ -45,6 +45,7 @@ h1 {
     font-size: 14px;
     color: white;
     border-radius: 6px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
 }
 
 #result1 input, #result2 input {
