@@ -64,12 +64,12 @@ text-align: center;
 
 th {
     /* background-color: #a0c2f0;  */
-    background-color: #B0C4DE;
+    background-color: #bccde3;
 }
 
 table tr td:first-child {
     font-weight: bold;
-    background-color: #e1eaee;
+    background-color: #E8E8E8;
 }
 
 .highlighted-cell {
