@@ -23,7 +23,7 @@ h1 {
     width: 170px;
 }
 
-#p2Title, caption, table tr td:first-child {
+#p2Title, caption {
     font-weight: bold;
 }
 
@@ -64,7 +64,12 @@ text-align: center;
 
 th {
     /* background-color: #a0c2f0;  */
-    background-color: #E1EBEE;
+    background-color: #B0C4DE;
+}
+
+table tr td:first-child {
+    font-weight: bold;
+    background-color: #e1eaee;
 }
 
 .highlighted-cell {
