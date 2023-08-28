@@ -64,7 +64,8 @@ text-align: center;
 }
 
 th {
-    background-color: #a0c2f0; 
+    /* background-color: #a0c2f0;  */
+    background-color: #E1EBEE;
 }
 
 .highlighted-cell {
