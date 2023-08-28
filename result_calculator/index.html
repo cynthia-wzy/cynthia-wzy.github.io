@@ -206,6 +206,7 @@
 
             if (!num4Input.disabled) { // 成年人
                 var pr;
+                var previousHighlightedCell = null;
 
                 switch (true) {
                     // 1. 男性
@@ -470,9 +471,16 @@
                 
                 result2_2.textContent = pr;
 
+                // 移除之前亮起來的格子樣式
+                if (previousHighlightedCell) {
+                    previousHighlightedCell.classList.remove("highlighted-cell");
+                }
+
+                // 亮起此次評等的格子
                 var targetCell = document.querySelector(targetCellSelector);
                 if (targetCell) {
-                    targetCell.classList.add("highlighted-cell"); // 添加CSS类以应用样式
+                    targetCell.classList.add("highlighted-cell"); 
+                    previousHighlightedCell = targetCell;
                 }
 
             } else { // 銀髮族
