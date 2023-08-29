@@ -704,4 +704,3 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
 
 window.addEventListener("load", start1, false);
 window.addEventListener("load", start2, false);
-
