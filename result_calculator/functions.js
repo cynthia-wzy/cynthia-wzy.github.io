@@ -35,6 +35,7 @@ function calculate1(){
     } else {
         var num4Input = document.getElementById("num4");
         num4Input.disabled = false;
+        num4Input.value = "";
     }
 
     // 判斷使用者輸入是否合法
@@ -257,7 +258,7 @@ function calculate2(){
             return;
         }
 
-        if (!validationPart2(age, height, weight, bodyfat, num1, num2, num3, num4, num5)){
+        if (!validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5)){
             return;
         }
 
