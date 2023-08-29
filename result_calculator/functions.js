@@ -31,10 +31,10 @@ function calculate1(){
     // 判斷為成年人還是銀髮族，銀髮族不用填心肺適能第四格
     if (age > 64) {
         var num4Input = document.getElementById("num4");
+        num4Input.value = "";
         num4Input.disabled = true;
     } else {
         var num4Input = document.getElementById("num4");
-        num4Input.value = "";
         num4Input.disabled = false;
     }
 
