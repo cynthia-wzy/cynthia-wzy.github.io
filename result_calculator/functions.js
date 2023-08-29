@@ -34,8 +34,8 @@ function calculate1(){
         num4Input.disabled = true;
     } else {
         var num4Input = document.getElementById("num4");
-        num4Input.disabled = false;
         num4Input.value = "";
+        num4Input.disabled = false;
     }
 
     // 判斷使用者輸入是否合法
@@ -247,7 +247,7 @@ function calculate2(){
             return;
         }
         
-        if (!validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5)){
+        if (!validationPart2_1(height, weight, bodyfat, num1, num2, num3, num4, num5)){
             return;
         }
 
@@ -258,7 +258,7 @@ function calculate2(){
             return;
         }
 
-        if (!validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5)){
+        if (!validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5)){
             return;
         }
 
@@ -660,7 +660,7 @@ function validationPart1(height, weight, bodyfat) {
     return true;
 }
 
-function validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5) {
+function validationPart2_1(height, weight, bodyfat, num1, num2, num3, num4, num5) { // 成年人
     if (!validationPart1(height, weight, bodyfat)) {
         return false;
     }
@@ -671,6 +671,24 @@ function validationPart2(height, weight, bodyfat, num1, num2, num3, num4, num5) 
     }
 
     if (num1 < 50 || num1 > 220 || num2 < 50 || num2 > 220 || num3 < 50 || num3 > 220 || num4 < 50 || num4 > 220 || num5 < 50 || num5 > 220) {
+        alert("漸進式原地抬膝踏步心率：請輸入有效的數字。");
+        return false;
+    }
+
+    return true;
+}
+
+function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { // 銀髮族
+    if (!validationPart1(height, weight, bodyfat)) {
+        return false;
+    }
+
+    if (!Number.isInteger(num1) || !Number.isInteger(num2) || !Number.isInteger(num3) || !Number.isInteger(num5)) {
+        alert("漸進式原地抬膝踏步心率：請確認數字皆為整數。");
+        return false;
+    }
+
+    if (num1 < 50 || num1 > 220 || num2 < 50 || num2 > 220 || num3 < 50 || num3 > 220 || num5 < 50 || num5 > 220) {
         alert("漸進式原地抬膝踏步心率：請輸入有效的數字。");
         return false;
     }
