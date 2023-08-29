@@ -33,6 +33,12 @@ function calculate1(){
         var num4Input = document.getElementById("num4");
         num4Input.value = "";
         num4Input.disabled = true;
+
+        // 移除之前亮起來的格子樣式
+        if (previousHighlightedCell) {
+            previousHighlightedCell.style.backgroundColor = "";
+            previousHighlightedCell.classList.remove("highlighted-cell");
+        }
     } else {
         var num4Input = document.getElementById("num4");
         num4Input.disabled = false;
@@ -623,11 +629,11 @@ function calculate2(){
         
         result2_2.textContent = pr;
 
-        // 移除之前亮起來的格子樣式
-        if (previousHighlightedCell) {
-            previousHighlightedCell.style.backgroundColor = "";
-            previousHighlightedCell.classList.remove("highlighted-cell");
-        }
+        // // 移除之前亮起來的格子樣式
+        // if (previousHighlightedCell) {
+        //     previousHighlightedCell.style.backgroundColor = "";
+        //     previousHighlightedCell.classList.remove("highlighted-cell");
+        // }
 
         // 亮起此次評等的格子
         var targetCell = document.querySelector(targetCellSelector);
