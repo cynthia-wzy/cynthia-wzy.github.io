@@ -137,6 +137,19 @@
         var currentYearTW = new Date().getFullYear() - 1911;
         var startYear = currentYearTW - 110;
         var endYear = currentYearTW - 23;
+        var selectedYear = parseFloat(document.getElementById("birthYear").value); 
+        var age = currentYearTW - selectedYear;
+
+        var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
+        var height = parseFloat(document.getElementById("height").value);
+        var weight = parseFloat(document.getElementById("weight").value);
+        var bodyfat = parseFloat(document.getElementById("bodyfat").value);
+
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var num3 = parseFloat(document.getElementById("num3").value);
+        var num4 = parseFloat(document.getElementById("num4").value);
+        var num5 = parseFloat(document.getElementById("num5").value);
 
         // 生成選項加到下拉式選單
         var selectElement = document.getElementById("birthYear");
@@ -154,13 +167,13 @@
         }
 
         function calculate1(){
-            var selectedYear = parseFloat(document.getElementById("birthYear").value); 
-            var age = currentYearTW - selectedYear;
+            // var selectedYear = parseFloat(document.getElementById("birthYear").value); 
+            // var age = currentYearTW - selectedYear;
 
-            var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
-            var height = parseFloat(document.getElementById("height").value);
-            var weight = parseFloat(document.getElementById("weight").value);
-            var bodyfat = parseFloat(document.getElementById("bodyfat").value);
+            // var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
+            // var height = parseFloat(document.getElementById("height").value);
+            // var weight = parseFloat(document.getElementById("weight").value);
+            // var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
             // 判斷為成年人還是銀髮族
             if (age > 64) {
@@ -352,19 +365,19 @@
         }
 
         function calculate2(){
-            var selectedYear = parseFloat(document.getElementById("birthYear").value); 
-            var age = currentYearTW - selectedYear;
+            // var selectedYear = parseFloat(document.getElementById("birthYear").value); 
+            // var age = currentYearTW - selectedYear;
 
-            var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
-            var height = parseFloat(document.getElementById("height").value);
-            var weight = parseFloat(document.getElementById("weight").value);
-            var bodyfat = parseFloat(document.getElementById("bodyfat").value);
+            // var genderNum = document.getElementById("gender").value  === "male" ? 1 : 0;
+            // var height = parseFloat(document.getElementById("height").value);
+            // var weight = parseFloat(document.getElementById("weight").value);
+            // var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             var bodyfatPercent = (bodyfat / weight) * 100;
-            var num1 = parseFloat(document.getElementById("num1").value);
-            var num2 = parseFloat(document.getElementById("num2").value);
-            var num3 = parseFloat(document.getElementById("num3").value);
-            var num4 = parseFloat(document.getElementById("num4").value);
-            var num5 = parseFloat(document.getElementById("num5").value);
+            // var num1 = parseFloat(document.getElementById("num1").value);
+            // var num2 = parseFloat(document.getElementById("num2").value);
+            // var num3 = parseFloat(document.getElementById("num3").value);
+            // var num4 = parseFloat(document.getElementById("num4").value);
+            // var num5 = parseFloat(document.getElementById("num5").value);
         
 
             // 根據不同身分檢查輸入與計算最大攝氧量
