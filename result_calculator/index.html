@@ -162,7 +162,7 @@
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             
-            // 判斷為成年人還是銀髮族
+            // 判斷為成年人還是銀髮族，銀髮族不用填心肺適能第四格
             if (age > 64) {
                 var num4Input = document.getElementById("num4");
                 num4Input.disabled = true;
@@ -200,9 +200,11 @@
                 bmiRating = "重度肥胖";
             }
             
+            // 結果寫入畫面
             var result1_1 = document.getElementById("result1-1");
             result1_1.textContent = result1.toString() + " (" + bmiRating + ")";
             
+
             // 計算體脂率
             var result2 = ((bodyfat / weight) * 100).toFixed(2);
 
@@ -341,6 +343,7 @@
                     break;
             }
 
+             // 結果寫入畫面
             var result1_2 = document.getElementById("result1-2");
             result1_2.textContent = result2.toString() + "%" + " (" + bodyfatRating + ")";
         }
@@ -360,13 +363,13 @@
             var weight = parseFloat(document.getElementById("weight").value);
             var bodyfat = parseFloat(document.getElementById("bodyfat").value);
             var bodyfatPercent = (bodyfat / weight) * 100;
+
             var num1 = parseFloat(document.getElementById("num1").value);
             var num2 = parseFloat(document.getElementById("num2").value);
             var num3 = parseFloat(document.getElementById("num3").value);
             var num4 = parseFloat(document.getElementById("num4").value);
             var num5 = parseFloat(document.getElementById("num5").value);
         
-
             // 根據不同身分檢查輸入與計算最大攝氧量
             var num4Input = document.getElementById("num4");
             var vo2max;
