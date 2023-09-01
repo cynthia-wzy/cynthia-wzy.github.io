@@ -702,5 +702,41 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
     return true;
 }
 
+// google chart
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// 繪製折線圖
+function drawChart() {
+  var num1 = parseInt(document.getElementById('num1').value);
+  var num2 = parseInt(document.getElementById('num2').value);
+  var num3 = parseInt(document.getElementById('num3').value);
+  var num4 = parseInt(document.getElementById('num4').value);
+  var num5 = parseInt(document.getElementById('num5').value);
+  
+  // 建立數據表並添加到列
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', '時段');
+  data.addColumn('number', '心率');
+  
+  // 向数据表中添加数据行
+  data.addRow(['0分鐘', num1]);
+  data.addRow(['1分鐘', num2]);
+  data.addRow(['2分鐘', num3]);
+  data.addRow(['3分鐘', num4]);
+  data.addRow(['结束', num5]);
+  
+  // 设置图表选项
+  var options = {
+    title: '心率變化',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+  
+  // 创建一个新的折线图实例，并在id为'chart_div'的<div>元素中绘制图表
+  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+
 window.addEventListener("load", start1, false);
 window.addEventListener("load", start2, false);
