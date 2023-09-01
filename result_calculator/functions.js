@@ -644,7 +644,13 @@ function calculate2(){
 
     } else { // 銀髮族
         result2_2.textContent = "轉換方式尚未制定";
-    }   
+    }
+    
+    // 載入google chart繪製折線圖
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(function() {
+        drawChart(num1, num2, num3, num4, num5);
+    });
 }
 
 function validationPart1(height, weight, bodyfat) {
@@ -702,38 +708,28 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
     return true;
 }
 
-// google chart
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
 
-// 繪製折線圖
-function drawChart() {
-  var num1 = parseInt(document.getElementById('num1').value);
-  var num2 = parseInt(document.getElementById('num2').value);
-  var num3 = parseInt(document.getElementById('num3').value);
-  var num4 = parseInt(document.getElementById('num4').value);
-  var num5 = parseInt(document.getElementById('num5').value);
-  
+function drawChart(num1, num2, num3, num4, num5) {
   // 建立數據表並添加到列
   var data = new google.visualization.DataTable();
-  data.addColumn('string', '時段');
-  data.addColumn('number', '心率');
+  data.addColumn("string", "時段");
+  data.addColumn("number", "心率");
   
-  // 向数据表中添加数据行
-  data.addRow(['0分鐘', num1]);
-  data.addRow(['1分鐘', num2]);
-  data.addRow(['2分鐘', num3]);
-  data.addRow(['3分鐘', num4]);
-  data.addRow(['结束', num5]);
+  // 數據表中添加數據行
+  data.addRow(["運動第0分鐘", num1]);
+  data.addRow(["運動1分鐘後", num2]);
+  data.addRow(["運動2分鐘後", num3]);
+  data.addRow(["運動3分鐘後", num4]);
+  data.addRow(["結束1分鐘後", num5]);
   
-  // 设置图表选项
+  // 設定圖表
   var options = {
     title: '心率變化',
     curveType: 'function',
     legend: { position: 'bottom' }
   };
   
-  // 创建一个新的折线图实例，并在id为'chart_div'的<div>元素中绘制图表
+  // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
   var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
   chart.draw(data, options);
 }
