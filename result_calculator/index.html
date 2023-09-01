@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>體適能結果計算機</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
@@ -46,7 +47,7 @@
         <p>運動2分鐘後心率： <input id="num3" type="number" min="50" max="220"></p>
         <p>運動3分鐘後心率： <input id="num4" type="number" min="50" max="220"> （65歲以上免填）</p>
         <p>運動結束1分鐘後心率： <input id="num5" type="number" min="50" max="220"></p>
-        <p><input id="cal2" type="button" value="計算"></p>
+        <p><input id="cal2" type="button" value="計算" onclick="drawChart()"></p>
     </div>
     
     <div id="result2">
@@ -130,6 +131,8 @@
         </table>
     </p>
     
+    <div id="chart_div"></div>
+
     <script src="functions.js"></script>
 
 </body>
