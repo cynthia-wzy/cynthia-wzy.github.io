@@ -76,3 +76,8 @@ table tr td:first-child {
 .highlighted-cell {
     background-color: #FFD700;
 }
+
+#chart_div {
+    width: 100%; 
+    height: 400px;
+}
