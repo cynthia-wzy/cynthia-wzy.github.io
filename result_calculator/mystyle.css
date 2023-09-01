@@ -64,7 +64,6 @@ text-align: center;
 }
 
 th {
-    /* background-color: #a0c2f0;  */
     background-color: #bccde3;
 }
 
@@ -78,6 +77,6 @@ table tr td:first-child {
 }
 
 #chart_div {
-    width: 100%; 
-    height: 400px;
+    width: 70%; 
+    height: 70%;
 }
