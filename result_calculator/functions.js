@@ -739,7 +739,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
                 labelStyle: {
                     color: 'red', // Label text color
                 },
-                value: maxHeartRate, // Horizontal line value
+                value: 190, // Horizontal line value
             },
         },
 
