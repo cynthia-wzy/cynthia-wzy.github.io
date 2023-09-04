@@ -718,7 +718,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addColumn("string", "時段");
     data.addColumn("number", "心率");
 
-    data.addColumn({ type: 'number', role: 'annotation' });
+    data.addColumn({ type: ' line'});
 
     // 數據表中添加數據行
     data.addRow(["運動第0分鐘", num1, maxHeartRate]);
