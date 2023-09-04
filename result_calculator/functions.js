@@ -713,44 +713,13 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     var maxHeartRate = 220 - age; // 最大心率
 
     var data = google.visualization.arrayToDataTable([
-        ["時段", "心率", "最大心率"],
-        ["運動第0分鐘",  num1, maxHeartRate],
-        ["運動1分鐘後",  num2, maxHeartRate],
-        ["運動2分鐘後",  num3, maxHeartRate],
-        ["運動3分鐘後",  num4, maxHeartRate],
-        ["結束1分鐘後",  num5, maxHeartRate]
+        ["時段", "心率", { role: "annotation" }, "最大心率"],
+        ["運動第0分鐘", num1, (num1 / maxHeartRate * 100) + '%', maxHeartRate],
+        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100) + '%', maxHeartRate],
+        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100) + '%', maxHeartRate],
+        ["運動3分鐘後", num4, (num4 / maxHeartRate * 100) + '%', maxHeartRate],
+        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100) + '%', maxHeartRate]
       ]);
-
-    // // 建立數據表並添加到列
-    // var data = new google.visualization.DataTable();
-    // data.addColumn("string", "時段");
-    // data.addColumn("number", "心率");
-
-    // // 數據表中添加數據行
-    // data.addRow(["運動第0分鐘", num1]);
-    // data.addRow(["運動1分鐘後", num2]);
-    // data.addRow(["運動2分鐘後", num3]);
-    // data.addRow(["運動3分鐘後", num4]);
-    // data.addRow(["結束1分鐘後", num5]);
-
-
-    // 创建一个数组来表示水平线数据
-   
-
-    // var horizontalLineData = [
-    //     ["運動第0分鐘", maxHeartRate],
-    //     ["結束1分鐘後", maxHeartRate]
-    // ];
-
-    // // 建立一个数据表用于水平线数据
-    // var horizontalLineDataTable = new google.visualization.DataTable();
-    // horizontalLineDataTable.addColumn("string", "時段");
-    // horizontalLineDataTable.addColumn("number", "最大心率");
-
-    // // 向水平线数据表中添加数据行
-    // for (var i = 0; i < horizontalLineData.length; i++) {
-    //     horizontalLineDataTable.addRow(horizontalLineData[i]);
-    // }
 
     // 設定圖表
     var options = {
@@ -760,15 +729,11 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         
         // series: {
         //     0: { color: 'blue' }, // 心率曲线的颜色
-        //     1: { color: 'red', lineWidth: 2, lineDashStyle: [4, 4], visibleInLegend: false }
+        //     1: { color: 'red', lineWidth: 2, lineDashStyle: [4, 4] }
         // }
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    // var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-
-    // // 合并心率数据和水平线数据
-    // var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
     chart.draw(data, options);
 }
 
