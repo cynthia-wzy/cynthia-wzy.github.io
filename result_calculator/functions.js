@@ -756,7 +756,9 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
     chart.draw(data, options);
-    chart.draw(horizontalLineDataTable, options);
+
+    var horizontalLineChart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    horizontalLineChart.draw(horizontalLineDataTable, options);
 }
 
 window.addEventListener("load", start1, false);
