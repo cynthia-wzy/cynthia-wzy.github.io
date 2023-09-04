@@ -731,10 +731,17 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         curveType: 'function',
         legend: { position: 'bottom' },
         
-        vAxis: {
-            title: '心率',
-            ticks: [maxHeartRate] // 在這裡設定水平線的值
-        }
+        annotations: {
+            hLine: {
+                color: 'red', // 水平線的顏色
+                lineWidth: 2, // 水平線的線寬
+                value: maxHeartRate, // 水平線的值
+                textStyle: {
+                    fontSize: 12, // 文字大小
+                },
+            },
+        },
+
         // // 添加图例来表示最大心率
         // annotations: {
         //     horizontalLine: { // 水平線
