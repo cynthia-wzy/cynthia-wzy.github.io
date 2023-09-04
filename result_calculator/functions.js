@@ -721,11 +721,11 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addColumn({ type: 'number', role: 'annotation' });
 
     // 數據表中添加數據行
-    data.addRow(["運動第0分鐘", num1]);
-    data.addRow(["運動1分鐘後", num2]);
-    data.addRow(["運動2分鐘後", num3]);
-    data.addRow(["運動3分鐘後", num4]);
-    data.addRow(["結束1分鐘後", num5]);
+    data.addRow(["運動第0分鐘", num1, maxHeartRate]);
+    data.addRow(["運動1分鐘後", num2, maxHeartRate]);
+    data.addRow(["運動2分鐘後", num3, maxHeartRate]);
+    data.addRow(["運動3分鐘後", num4, maxHeartRate]);
+    data.addRow(["結束1分鐘後", num5, maxHeartRate]);
 
     // 設定圖表
     var options = {
