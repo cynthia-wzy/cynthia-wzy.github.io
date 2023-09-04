@@ -718,14 +718,29 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addColumn("string", "時段");
     data.addColumn("number", "心率");
 
-    data.addColumn({ type: ' line'});
-
     // 數據表中添加數據行
-    data.addRow(["運動第0分鐘", num1, maxHeartRate]);
-    data.addRow(["運動1分鐘後", num2, maxHeartRate]);
-    data.addRow(["運動2分鐘後", num3, maxHeartRate]);
-    data.addRow(["運動3分鐘後", num4, maxHeartRate]);
-    data.addRow(["結束1分鐘後", num5, maxHeartRate]);
+    data.addRow(["運動第0分鐘", num1]);
+    data.addRow(["運動1分鐘後", num2]);
+    data.addRow(["運動2分鐘後", num3]);
+    data.addRow(["運動3分鐘後", num4]);
+    data.addRow(["結束1分鐘後", num5]);
+
+
+    // 创建一个数组来表示水平线数据
+    var horizontalLineData = [
+        ["運動第0分鐘", maxHeartRate],
+        ["結束1分鐘後", maxHeartRate]
+    ];
+
+    // 建立一个数据表用于水平线数据
+    var horizontalLineDataTable = new google.visualization.DataTable();
+    horizontalLineDataTable.addColumn("string", "時段");
+    horizontalLineDataTable.addColumn("number", "最大心率");
+
+    // 向水平线数据表中添加数据行
+    for (var i = 0; i < horizontalLineData.length; i++) {
+        horizontalLineDataTable.addRow(horizontalLineData[i]);
+    }
 
     // 設定圖表
     var options = {
@@ -734,14 +749,8 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         legend: { position: 'bottom' },
         
         series: {
-            0: { // 第一个数据系列（心率曲线）
-                color: 'blue', // 心率曲线的颜色
-            },
-            1: { // 第二个数据系列（水平线）
-                color: 'red', // 水平线的颜色
-                lineWidth: 2, // 水平线的线宽
-                enableInteractivity: false, // 禁用交互
-            },
+            0: { color: 'blue' }, // 心率曲线的颜色
+            1: { color: 'red', lineWidth: 2, lineDashStyle: [4, 4], visibleInLegend: false }
         },
         // annotations: {
         //     horizontalLine: {
@@ -772,6 +781,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
+    chart.draw(horizontalLineDataTable, options);
 }
 
 window.addEventListener("load", start1, false);
