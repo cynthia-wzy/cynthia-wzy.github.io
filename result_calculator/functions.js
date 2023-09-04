@@ -730,11 +730,6 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         },
         curveType: "function", // 平滑線
         legend: { position: "bottom" }
-        
-        // series: {
-        //     0: { color: 'blue' }, // 心率曲线的颜色
-        //     1: { color: 'red', lineWidth: 2, lineDashStyle: [4, 4] }
-        // }
     };
 
     var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
