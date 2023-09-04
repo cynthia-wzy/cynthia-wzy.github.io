@@ -714,11 +714,11 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
     var data = google.visualization.arrayToDataTable([
         ["時段", "心率", { role: "annotation" }, "最大心率"],
-        ["運動第0分鐘", num1, (num1 / maxHeartRate * 100) + '%', maxHeartRate],
-        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100) + '%', maxHeartRate],
-        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100) + '%', maxHeartRate],
-        ["運動3分鐘後", num4, (num4 / maxHeartRate * 100) + '%', maxHeartRate],
-        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100) + '%', maxHeartRate]
+        ["運動第0分鐘", num1, (num1 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
+        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
+        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
+        ["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
+        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate]
       ]);
 
     // 設定圖表
