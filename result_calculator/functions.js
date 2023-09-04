@@ -710,9 +710,6 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
 
 
 function drawChart(age, num1, num2, num3, num4, num5) {
-    // 計算最大心率
-    var maxHeartRate = 220 - age;
-
     // 建立數據表並添加到列
     var data = new google.visualization.DataTable();
     data.addColumn("string", "時段");
@@ -727,6 +724,8 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
 
     // 创建一个数组来表示水平线数据
+    var maxHeartRate = 220 - age; // 最大心率
+
     var horizontalLineData = [
         ["運動第0分鐘", maxHeartRate],
         ["結束1分鐘後", maxHeartRate]
@@ -751,31 +750,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         series: {
             0: { color: 'blue' }, // 心率曲线的颜色
             1: { color: 'red', lineWidth: 2, lineDashStyle: [4, 4], visibleInLegend: false }
-        },
-        // annotations: {
-        //     horizontalLine: {
-        //         color: 'red', // Horizontal line color
-        //         lineWidth: 2, // Horizontal line width
-        //         label: 'Max Heart Rate', // Label for the horizontal line
-        //         labelStyle: {
-        //             color: 'red', // Label text color
-        //         },
-        //         value: maxHeartRate, // Horizontal line value
-        //     },
-        // },
-
-        // annotations: {
-        //     horizontalLine: { // 水平線
-        //         color: "red",
-        //         label: "最大心率", // 標籤
-        //         style: 'line', // 樣式
-        //         role: 'annotation', // 注解
-        //         value: maxHeartRate, // 值
-        //         alwaysOutside: true, // 始终显示在外部
-        //         strokeWidth: 2, // 线宽度
-        //         showValue: true // 显示值
-        //     },
-        // },
+        }
     };
 
     // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
