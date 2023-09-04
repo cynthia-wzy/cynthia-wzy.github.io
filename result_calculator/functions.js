@@ -731,19 +731,23 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         curveType: 'function',
         legend: { position: 'bottom' },
         
-        // 添加图例来表示最大心率
-        annotations: {
-            horizontalLine: { // 水平線
-                color: "red",
-                label: "最大心率", // 標籤
-                style: 'line', // 樣式
-                role: 'annotation', // 注解
-                value: maxHeartRate, // 值
-                alwaysOutside: true, // 始终显示在外部
-                strokeWidth: 2, // 线宽度
-                showValue: true // 显示值
-            },
-        },
+        vAxis: {
+            title: '心率',
+            ticks: [maxHeartRate] // 在這裡設定水平線的值
+        }
+        // // 添加图例来表示最大心率
+        // annotations: {
+        //     horizontalLine: { // 水平線
+        //         color: "red",
+        //         label: "最大心率", // 標籤
+        //         style: 'line', // 樣式
+        //         role: 'annotation', // 注解
+        //         value: maxHeartRate, // 值
+        //         alwaysOutside: true, // 始终显示在外部
+        //         strokeWidth: 2, // 线宽度
+        //         showValue: true // 显示值
+        //     },
+        // },
     };
 
     // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
