@@ -727,19 +727,25 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     var maxHeartRate = 220 - age; // 最大心率
 
     var horizontalLineData = [
-        ["運動第0分鐘", maxHeartRate],
-        ["結束1分鐘後", maxHeartRate]
+        ["時段", maxHeartRate]
     ];
 
-    // 建立一个数据表用于水平线数据
-    var horizontalLineDataTable = new google.visualization.DataTable();
-    horizontalLineDataTable.addColumn("string", "時段");
-    horizontalLineDataTable.addColumn("number", "最大心率");
+    var horizontalLineDataTable = google.visualization.arrayToDataTable(horizontalLineData);
 
-    // 向水平线数据表中添加数据行
-    for (var i = 0; i < horizontalLineData.length; i++) {
-        horizontalLineDataTable.addRow(horizontalLineData[i]);
-    }
+    // var horizontalLineData = [
+    //     ["運動第0分鐘", maxHeartRate],
+    //     ["結束1分鐘後", maxHeartRate]
+    // ];
+
+    // // 建立一个数据表用于水平线数据
+    // var horizontalLineDataTable = new google.visualization.DataTable();
+    // horizontalLineDataTable.addColumn("string", "時段");
+    // horizontalLineDataTable.addColumn("number", "最大心率");
+
+    // // 向水平线数据表中添加数据行
+    // for (var i = 0; i < horizontalLineData.length; i++) {
+    //     horizontalLineDataTable.addRow(horizontalLineData[i]);
+    // }
 
     // 設定圖表
     var options = {
@@ -755,10 +761,9 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
 
-    chart.draw([data, google.visualization.arrayToDataTable(horizontalLineData)], options); // 使用生成的水平线数据
-    // // 合并心率数据和水平线数据
-    // var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
-    // chart.draw(mergedData, options);
+    // 合并心率数据和水平线数据
+    var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
+    chart.draw(mergedData, options);
 }
 
 window.addEventListener("load", start1, false);
