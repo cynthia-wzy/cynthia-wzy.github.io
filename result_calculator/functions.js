@@ -725,41 +725,25 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addRow(["運動3分鐘後", num4]);
     data.addRow(["結束1分鐘後", num5]);
 
+    data.addRow(["最大心率", maxHeartRate]);
+
     // 設定圖表
     var options = {
-    title: '心率變化',
-    curveType: 'function',
-    legend: { position: 'bottom' },
-    vAxis: { // 最大心率水平線
-        viewWindowMode: 'explicit',
-        viewWindow: {
-          max: maxHeartRate
-        }
-      },
-      // 添加图例来表示最大心率
-      annotations: {
-        textStyle: {
-          fontSize: 12,
-          color: 'red'
+        title: '心率變化',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        
+        // 添加图例来表示最大心率
+        annotations: {
+            horizontalLine: { // 水平線
+                color: "red",
+                opacity: 0.8, //透明度
+                label: "最大心率", // 標籤
+                style: 'line', // 樣式
+                lineDash: [4, 4], // 虛線樣式
+                value: maxHeartRate, // 值
+            },
         },
-        stems: [{ color: 'red', length: 2, position: 'top' }],
-        style: 'line',
-        boxStyle: {
-          stroke: '#888',
-          strokeWidth: 1,
-          gradient: {
-            color1: 'white',
-            color2: 'red',
-            x1: '0%',
-            y1: '0%',
-            x2: '100%',
-            y2: '100%'
-          }
-        },
-        datum: {
-          tooltip: '最大心率'
-        }
-      }
     };
 
     // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
