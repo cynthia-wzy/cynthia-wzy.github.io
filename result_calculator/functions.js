@@ -714,18 +714,18 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
     var data = google.visualization.arrayToDataTable([
         ["時段", "心率", { role: "annotation" }, "最大心率 (根據年齡推算)"],
-        ["運動第0分鐘", num1, (num1 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
-        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
-        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
-        ["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
-        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate]
+        ["運動第0分鐘", num1, "最大心率百分比" + (num1 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]
       ]);
 
     // 設定圖表
     var options = {
         title: "漸進式原地抬膝踏步心率：心率變化",
-        curveType: 'function',
-        legend: { position: 'bottom' }
+        curveType: "function", // 平滑線
+        legend: { position: "bottom" }
         
         // series: {
         //     0: { color: 'blue' }, // 心率曲线的颜色
@@ -733,7 +733,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         // }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
     chart.draw(data, options);
 }
 
