@@ -725,7 +725,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addRow(["運動3分鐘後", num4]);
     data.addRow(["結束1分鐘後", num5]);
 
-    data.addRow(["最大心率", maxHeartRate]);
+    // data.addRow(["最大心率", maxHeartRate]);
 
     // 設定圖表
     var options = {
@@ -737,10 +737,9 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         annotations: {
             horizontalLine: { // 水平線
                 color: "red",
-                opacity: 0.8, //透明度
                 label: "最大心率", // 標籤
-                style: 'line', // 樣式
-                lineDash: [4, 4], // 虛線樣式
+                type: 'line', // 樣式
+                role: 'domain', // 虛線樣式
                 value: maxHeartRate, // 值
             },
         },
