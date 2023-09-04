@@ -718,6 +718,8 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     data.addColumn("string", "時段");
     data.addColumn("number", "心率");
 
+    data.addColumn({ type: 'number', role: 'annotation' });
+
     // 數據表中添加數據行
     data.addRow(["運動第0分鐘", num1]);
     data.addRow(["運動1分鐘後", num2]);
@@ -731,19 +733,28 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         curveType: 'function',
         legend: { position: 'bottom' },
         
-        annotations: {
-            horizontalLine: {
-                color: 'red', // Horizontal line color
-                lineWidth: 2, // Horizontal line width
-                label: 'Max Heart Rate', // Label for the horizontal line
-                labelStyle: {
-                    color: 'red', // Label text color
-                },
-                value: 190, // Horizontal line value
+        series: {
+            0: { // 第一个数据系列（心率曲线）
+                color: 'blue', // 心率曲线的颜色
+            },
+            1: { // 第二个数据系列（水平线）
+                color: 'red', // 水平线的颜色
+                lineWidth: 2, // 水平线的线宽
+                enableInteractivity: false, // 禁用交互
             },
         },
+        // annotations: {
+        //     horizontalLine: {
+        //         color: 'red', // Horizontal line color
+        //         lineWidth: 2, // Horizontal line width
+        //         label: 'Max Heart Rate', // Label for the horizontal line
+        //         labelStyle: {
+        //             color: 'red', // Label text color
+        //         },
+        //         value: maxHeartRate, // Horizontal line value
+        //     },
+        // },
 
-        // // 添加图例来表示最大心率
         // annotations: {
         //     horizontalLine: { // 水平線
         //         color: "red",
