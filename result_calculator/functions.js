@@ -713,7 +713,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     var maxHeartRate = 220 - age; // 最大心率
 
     var data = google.visualization.arrayToDataTable([
-        ["時段", "心率", { role: "annotation" }, "最大心率"],
+        ["時段", "心率", { role: "annotation" }, "最大心率 (根據年齡推算)"],
         ["運動第0分鐘", num1, (num1 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
         ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
         ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + '%', maxHeartRate],
