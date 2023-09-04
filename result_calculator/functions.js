@@ -769,7 +769,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
     // // 合并心率数据和水平线数据
     // var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
-    chart.draw(mergedData, options);
+    chart.draw(data, options);
 }
 
 window.addEventListener("load", start1, false);
