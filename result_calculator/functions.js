@@ -739,6 +739,9 @@ function drawChart(age, num1, num2, num3, num4, num5) {
                 style: 'line', // 樣式
                 role: 'annotation', // 注解
                 value: maxHeartRate, // 值
+                alwaysOutside: true, // 始终显示在外部
+                strokeWidth: 2, // 线宽度
+                showValue: true // 显示值
             },
         },
     };
