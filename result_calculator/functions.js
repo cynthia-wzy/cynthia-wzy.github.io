@@ -649,7 +649,7 @@ function calculate2(){
     // 載入google chart繪製折線圖
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(function() {
-        drawChart(num1, num2, num3, num4, num5);
+        drawChart(age, num1, num2, num3, num4, num5);
     });
 }
 
@@ -709,29 +709,61 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
 }
 
 
-function drawChart(num1, num2, num3, num4, num5) {
-  // 建立數據表並添加到列
-  var data = new google.visualization.DataTable();
-  data.addColumn("string", "時段");
-  data.addColumn("number", "心率");
-  
-  // 數據表中添加數據行
-  data.addRow(["運動第0分鐘", num1]);
-  data.addRow(["運動1分鐘後", num2]);
-  data.addRow(["運動2分鐘後", num3]);
-  data.addRow(["運動3分鐘後", num4]);
-  data.addRow(["結束1分鐘後", num5]);
-  
-  // 設定圖表
-  var options = {
+function drawChart(age, num1, num2, num3, num4, num5) {
+    // 計算最大心率
+    var maxHeartRate = 220 - age;
+
+    // 建立數據表並添加到列
+    var data = new google.visualization.DataTable();
+    data.addColumn("string", "時段");
+    data.addColumn("number", "心率");
+
+    // 數據表中添加數據行
+    data.addRow(["運動第0分鐘", num1]);
+    data.addRow(["運動1分鐘後", num2]);
+    data.addRow(["運動2分鐘後", num3]);
+    data.addRow(["運動3分鐘後", num4]);
+    data.addRow(["結束1分鐘後", num5]);
+
+    // 設定圖表
+    var options = {
     title: '心率變化',
     curveType: 'function',
-    legend: { position: 'bottom' }
-  };
-  
-  // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-  chart.draw(data, options);
+    legend: { position: 'bottom' },
+    vAxis: { // 最大心率水平線
+        viewWindow: {
+          max: maxHeartRate
+        }
+      },
+      // 添加图例来表示最大心率
+      annotations: {
+        textStyle: {
+          fontSize: 12,
+          color: 'red'
+        },
+        stems: [{ color: 'red', length: 2, position: 'top' }],
+        style: 'line',
+        boxStyle: {
+          stroke: '#888',
+          strokeWidth: 1,
+          gradient: {
+            color1: 'white',
+            color2: 'red',
+            x1: '0%',
+            y1: '0%',
+            x2: '100%',
+            y2: '100%'
+          }
+        },
+        datum: {
+          tooltip: '最大心率'
+        }
+      }
+    };
+
+    // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
 }
 
 window.addEventListener("load", start1, false);
