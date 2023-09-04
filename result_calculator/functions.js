@@ -753,18 +753,12 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         }
     };
 
-    // 創建一個新的折線圖實例，並在id為'chart_div'的<div>元素中相關圖表
-    // var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-    // chart.draw(data, options);
-
-    // var horizontalLineChart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    // horizontalLineChart.draw(horizontalLineDataTable, options);
-
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
 
-    // 合并心率数据和水平线数据
-    var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
-    chart.draw(mergedData, options);
+    chart.draw([data, google.visualization.arrayToDataTable(horizontalLineData)], options); // 使用生成的水平线数据
+    // // 合并心率数据和水平线数据
+    // var mergedData = google.visualization.data.join(data, horizontalLineDataTable, 'full', [[0, 0]], [1], [1]);
+    // chart.draw(mergedData, options);
 }
 
 window.addEventListener("load", start1, false);
