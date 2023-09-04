@@ -732,13 +732,14 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         legend: { position: 'bottom' },
         
         annotations: {
-            hLine: {
-                color: 'red', // 水平線的顏色
-                lineWidth: 2, // 水平線的線寬
-                value: maxHeartRate, // 水平線的值
-                textStyle: {
-                    fontSize: 12, // 文字大小
+            horizontalLine: {
+                color: 'red', // Horizontal line color
+                lineWidth: 2, // Horizontal line width
+                label: 'Max Heart Rate', // Label for the horizontal line
+                labelStyle: {
+                    color: 'red', // Label text color
                 },
+                value: maxHeartRate, // Horizontal line value
             },
         },
 
