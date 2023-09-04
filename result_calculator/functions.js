@@ -736,7 +736,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
             horizontalLine: { // 水平線
                 color: "red",
                 label: "最大心率", // 標籤
-                type: 'line', // 樣式
+                style: 'line', // 樣式
                 role: 'annotation', // 注解
                 value: maxHeartRate, // 值
             },
