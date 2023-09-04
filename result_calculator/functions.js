@@ -731,6 +731,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
     curveType: 'function',
     legend: { position: 'bottom' },
     vAxis: { // 最大心率水平線
+        viewWindowMode: 'explicit',
         viewWindow: {
           max: maxHeartRate
         }
