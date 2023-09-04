@@ -723,7 +723,7 @@ function drawChart(age, num1, num2, num3, num4, num5) {
 
     // 設定圖表
     var options = {
-        title: '心率變化',
+        title: "漸進式原地抬膝踏步心率：心率變化",
         curveType: 'function',
         legend: { position: 'bottom' }
         
