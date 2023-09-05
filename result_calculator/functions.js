@@ -57,7 +57,7 @@ function calculate1(){
     // 計算BMI
     var result1 = (weight / (height/100)**2).toFixed(2);
     
-    // 判斷bmi評等
+    // 判斷BMI評等
     var bmiRating; 
     if (result1 < 18.5 && result1 >= 0) {
         bmiRating = "過瘦";
