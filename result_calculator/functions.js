@@ -782,7 +782,7 @@ function drawChart(age, num1, num2, num3, num4=null, num5) {
         ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
     ]);
 
-    if (num4 != null) { // 成年人
+    if (num4 !== null) { // 成年人
         data.addRow(["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]);
     }
 
