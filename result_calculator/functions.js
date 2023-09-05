@@ -651,6 +651,7 @@ function calculate2(){
     google.charts.setOnLoadCallback(function() { // 成年人
         drawChart(age, num1, num2, num3, num4, num5);
     });
+    
     // if (age <= 64){
     //     google.charts.setOnLoadCallback(function() { // 成年人
     //         drawChart(age, num1, num2, num3, num4, num5);
@@ -783,7 +784,7 @@ function drawChart(age, num1, num2, num3, num4=null, num5) {
     ]);
 
     console.log("num4 is:", num4);
-    
+
     if (num4 !== null) { // 成年人
         data.addRow(["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]);
     }
