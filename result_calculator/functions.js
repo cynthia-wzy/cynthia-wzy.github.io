@@ -283,7 +283,7 @@ function calculate2(){
 
     if (genderNum == 1) { // male
         resultDiv.innerHTML = ""; // 清空先前內容
-        var maleTableHTML = 
+        var maleTableHTML = `
             <table>
                 <caption>男性落點分析 (23-64歲)</caption>
                 <tbody>
@@ -318,11 +318,12 @@ function calculate2(){
                         <td>60-64歲</td><td>~28.53</td><td>28.54~30.81</td><td>30.82~32.66</td><td>32.67~35.48</td><td>35.49~</td>
                     </tr>
                 </tbody>
-            </table>;
+            </table>
+            `;
         resultDiv.innerHTML = maleTableHTML;
     } else { // female
         resultDiv.innerHTML = ""; // 清空先前內容
-        var femaleTableHTML = 
+        var femaleTableHTML = `
             <table>
                 <caption>女性落點分析 (23-64歲)</caption>
                 <tbody>
@@ -357,7 +358,8 @@ function calculate2(){
                         <td>60-64歲</td><td>~23.13</td><td>23.14~25.60</td><td>25.61~27.92</td><td>27.93~30.37</td><td>30.38~</td>
                     </tr>
                 </tbody>
-            </table>;
+            </table>
+            `;
         resultDiv.innerHTML = femaleTableHTML;
     }
 
