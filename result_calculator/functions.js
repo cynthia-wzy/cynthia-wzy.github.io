@@ -393,152 +393,152 @@ function calculate2(){
             case genderNum == 1 && age >= 25 && age <= 29:
                 if (vo2max <= 33.30) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(3) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(3) td:nth-child(2)";
                 } else if (vo2max <= 36.21 && vo2max >= 33.31) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(3) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(3) td:nth-child(3)";
                 } else if (vo2max <= 38.76 && vo2max >= 36.22) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(3) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(3) td:nth-child(4)";
                 } else if (vo2max <= 41.66 && vo2max >= 38.77) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(3) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(3) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(3) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(3) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 30 && age <= 34:
                 if (vo2max <= 32.25) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(4) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(4) td:nth-child(2)";
                 } else if (vo2max <= 35.23 && vo2max >= 32.26) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(4) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(4) td:nth-child(3)";
                 } else if (vo2max <= 37.58 && vo2max >= 35.24) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(4) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(4) td:nth-child(4)";
                 } else if (vo2max <= 40.33 && vo2max >= 37.59) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(4) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(4) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(4) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(4) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 35 && age <= 39:
                 if (vo2max <= 31.04) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(5) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(5) td:nth-child(2)";
                 } else if (vo2max <= 34.21 && vo2max >= 31.05) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(5) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(5) td:nth-child(3)";
                 } else if (vo2max <= 36.49 && vo2max >= 34.22) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(5) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(5) td:nth-child(4)";
                 } else if (vo2max <= 39.58 && vo2max >= 36.50) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(5) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(5) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(5) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(5) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 40 && age <= 44:
                 if (vo2max <= 30.64) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(6) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(6) td:nth-child(2)";
                 } else if (vo2max <= 33.40 && vo2max >= 30.65) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(6) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(6) td:nth-child(3)";
                 } else if (vo2max <= 35.82 && vo2max >= 33.41) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(6) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(6) td:nth-child(4)";
                 } else if (vo2max <= 38.61 && vo2max >= 35.83) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(6) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(6) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(6) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(6) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 45 && age <= 49:
                 if (vo2max <= 30.11) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(7) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(7) td:nth-child(2)";
                 } else if (vo2max <= 32.55 && vo2max >= 30.12) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(7) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(7) td:nth-child(3)";
                 } else if (vo2max <= 34.74 && vo2max >= 32.56) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(7) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(7) td:nth-child(4)";
                 } else if (vo2max <= 38.00 && vo2max >= 34.75) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(7) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(7) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(7) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(7) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 50 && age <= 54:
                 if (vo2max <= 29.62) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(8) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(8) td:nth-child(2)";
                 } else if (vo2max <= 31.82 && vo2max >= 29.63) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(8) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(8) td:nth-child(3)";
                 } else if (vo2max <= 34.01 && vo2max >= 31.83) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(8) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(8) td:nth-child(4)";
                 } else if (vo2max <= 36.77 && vo2max >= 34.02) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(8) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(8) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(8) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(8) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 55 && age <= 59:
                 if (vo2max <= 29.02) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(9) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(9) td:nth-child(2)";
                 } else if (vo2max <= 31.69 && vo2max >= 29.03) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(9) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(9) td:nth-child(3)";
                 } else if (vo2max <= 33.91 && vo2max >= 31.70) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(9) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(9) td:nth-child(4)";
                 } else if (vo2max <= 36.67 && vo2max >= 33.92) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(9) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(9) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(9) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(9) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 1 && age >= 60 && age <= 64:
                 if (vo2max <= 28.53) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(10) td:nth-child(2)";
+                    targetCellSelector = "#maleTable tr:nth-child(10) td:nth-child(2)";
                 } else if (vo2max <= 30.81 && vo2max >= 28.54) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(10) td:nth-child(3)";
+                    targetCellSelector = "#maleTable tr:nth-child(10) td:nth-child(3)";
                 } else if (vo2max <= 32.66 && vo2max >= 30.82) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(10) td:nth-child(4)";
+                    targetCellSelector = "#maleTable tr:nth-child(10) td:nth-child(4)";
                 } else if (vo2max <= 35.48 && vo2max >= 32.67) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(10) td:nth-child(5)";
+                    targetCellSelector = "#maleTable tr:nth-child(10) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(1) tr:nth-child(10) td:nth-child(6)";
+                    targetCellSelector = "#maleTable tr:nth-child(10) td:nth-child(6)";
                 }
                 break;
 
@@ -565,38 +565,38 @@ function calculate2(){
             case genderNum == 0 && age >= 25 && age <= 29:
                 if (vo2max <= 27.29) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(3) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(3) td:nth-child(2)";
                 } else if (vo2max <= 30.48 && vo2max >= 27.30) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(3) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(3) td:nth-child(3)";
                 } else if (vo2max <= 32.98 && vo2max >= 30.49) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(3) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(3) td:nth-child(4)";
                 } else if (vo2max <= 35.78 && vo2max >= 32.99) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(3) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(3) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(3) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(3) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 0 && age >= 30 && age <= 34:
                 if (vo2max <= 27.06) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(4) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(4) td:nth-child(2)";
                 } else if (vo2max <= 30.13 && vo2max >= 27.07) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(4) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(4) td:nth-child(3)";
                 } else if (vo2max <= 32.48 && vo2max >= 30.14) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(4) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(4) td:nth-child(4)";
                 } else if (vo2max <= 35.56 && vo2max >= 32.49) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(4) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(4) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(4) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(4) td:nth-child(6)";
                 }
                 break;
 
@@ -622,95 +622,95 @@ function calculate2(){
             case genderNum == 0 && age >= 40 && age <= 44:
                 if (vo2max <= 26.13) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(6) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(6) td:nth-child(2)";
                 } else if (vo2max <= 28.86 && vo2max >= 26.14) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(6) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(6) td:nth-child(3)";
                 } else if (vo2max <= 31.21 && vo2max >= 28.87) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(6) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(6) td:nth-child(4)";
                 } else if (vo2max <= 34.11 && vo2max >= 31.22) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(6) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(6) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(6) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(6) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 0 && age >= 45 && age <= 49:
                 if (vo2max <= 25.14) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(7) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(7) td:nth-child(2)";
                 } else if (vo2max <= 28.04 && vo2max >= 25.15) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(7) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(7) td:nth-child(3)";
                 } else if (vo2max <= 30.28 && vo2max >= 28.05) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(7) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(7) td:nth-child(4)";
                 } else if (vo2max <= 32.77 && vo2max >= 30.29) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(7) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(7) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(7) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(7) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 0 && age >= 50 && age <= 54:
                 if (vo2max <= 24.12) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(8) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(8) td:nth-child(2)";
                 } else if (vo2max <= 27.04 && vo2max >= 24.13) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(8) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(8) td:nth-child(3)";
                 } else if (vo2max <= 29.31 && vo2max >= 27.05) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(8) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(8) td:nth-child(4)";
                 } else if (vo2max <= 32.16 && vo2max >= 29.32) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(8) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(8) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(8) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(8) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 0 && age >= 55 && age <= 59:
                 if (vo2max <= 23.73) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(9) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(9) td:nth-child(2)";
                 } else if (vo2max <= 26.40 && vo2max >= 23.74) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(9) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(9) td:nth-child(3)";
                 } else if (vo2max <= 28.74 && vo2max >= 26.41) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(9) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(9) td:nth-child(4)";
                 } else if (vo2max <= 31.45 && vo2max >= 28.75) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(9) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(9) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(9) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(9) td:nth-child(6)";
                 }
                 break;
 
             case genderNum == 0 && age >= 60 && age <= 64:
                 if (vo2max <= 23.13) {
                     pr = "PR1-20";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(10) td:nth-child(2)";
+                    targetCellSelector = "#femaleTable tr:nth-child(10) td:nth-child(2)";
                 } else if (vo2max <= 25.60 && vo2max >= 23.14) {
                     pr = "PR21-40";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(10) td:nth-child(3)";
+                    targetCellSelector = "#femaleTable tr:nth-child(10) td:nth-child(3)";
                 } else if (vo2max <= 27.92 && vo2max >= 25.61) {
                     pr = "PR41-60";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(10) td:nth-child(4)";
+                    targetCellSelector = "#femaleTable tr:nth-child(10) td:nth-child(4)";
                 } else if (vo2max <= 30.37 && vo2max >= 27.93) {
                     pr = "PR61-80";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(10) td:nth-child(5)";
+                    targetCellSelector = "#femaleTable tr:nth-child(10) td:nth-child(5)";
                 } else {
                     pr = "PR81-99";
-                    targetCellSelector = "table:nth-of-type(2) tr:nth-child(10) td:nth-child(6)";
+                    targetCellSelector = "#femaleTable tr:nth-child(10) td:nth-child(6)";
                 }
                 break;
         }
