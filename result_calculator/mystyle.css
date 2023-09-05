@@ -80,8 +80,3 @@ table tr td:first-child {
     width: 100%; 
     height: 400px;
 }
-
-.chart-title {
-    text-align: center;
-    font-size: 15px;
-}
