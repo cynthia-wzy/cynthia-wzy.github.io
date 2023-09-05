@@ -647,10 +647,17 @@ function calculate2(){
     }
     
     // 載入google chart繪製折線圖
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(function() {
-        drawChart(age, num1, num2, num3, num4, num5);
-    });
+    google.charts.load("current", {"packages":["corechart"]});
+    if (age <= 64){
+        google.charts.setOnLoadCallback(function() { // 成年人
+            drawChart(age, num1, num2, num3, num4, num5);
+        });
+    } else{
+        google.charts.setOnLoadCallback(function() { // 銀髮族
+            drawChart(age, num1, num2, num3, num5);
+        });
+    }
+    
 }
 
 function validationPart1(height, weight, bodyfat) {
@@ -709,7 +716,7 @@ function validationPart2_2(height, weight, bodyfat, num1, num2, num3, num5) { //
 }
 
 
-function drawChart(age, num1, num2, num3, num4, num5) {
+function drawChart(age, num1, num2, num3, num4, num5) { // 成年人 
     var maxHeartRate = 220 - age; // 最大心率
 
     var data = google.visualization.arrayToDataTable([
@@ -718,6 +725,32 @@ function drawChart(age, num1, num2, num3, num4, num5) {
         ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
         ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
         ["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["結束1分鐘後", num5, (num5 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]
+      ]);
+
+    // 設定圖表
+    var options = {
+        title: "漸進式原地抬膝踏步心率：心率變化",
+        titleTextStyle: {
+            fontSize:15,
+            bold: true
+        },
+        curveType: "function", // 平滑線
+        legend: { position: "bottom" }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
+    chart.draw(data, options);
+}
+
+function drawChart(age, num1, num2, num3, num5) { // 銀髮族 
+    var maxHeartRate = 220 - age; // 最大心率
+
+    var data = google.visualization.arrayToDataTable([
+        ["時段", "心率", { role: "annotation" }, "最大心率 (根據年齡推算)"],
+        ["運動第0分鐘", num1, "最大心率百分比：" + (num1 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["運動1分鐘後", num2, (num2 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
+        ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
         ["結束1分鐘後", num5, (num5 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]
       ]);
 
