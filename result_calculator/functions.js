@@ -651,7 +651,7 @@ function calculate2(){
     google.charts.setOnLoadCallback(function() { // 成年人
         drawChart(age, num1, num2, num3, num4, num5);
     });
-    
+
     // if (age <= 64){
     //     google.charts.setOnLoadCallback(function() { // 成年人
     //         drawChart(age, num1, num2, num3, num4, num5);
@@ -783,8 +783,11 @@ function drawChart(age, num1, num2, num3, num4=null, num5) {
         ["運動2分鐘後", num3, (num3 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate],
     ]);
 
-    console.log("num4 is:", num4);
-
+    // console.log("num4 is:", num4);
+    if (isNaN(num4)) {
+        num4 = null; // 如果 num4 是 NaN，则将其设为 null
+    }
+    
     if (num4 !== null) { // 成年人
         data.addRow(["運動3分鐘後", num4, (num4 / maxHeartRate * 100).toFixed(1) + "%", maxHeartRate]);
     }
