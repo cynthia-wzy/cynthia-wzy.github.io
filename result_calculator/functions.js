@@ -720,7 +720,7 @@ function drawChart(age, num1, num2, num3, num4=null, num5) {
 
     // console.log("num4 is:", num4);
     if (isNaN(num4)) {
-        num4 = null; // 如果 num4 是 NaN，则将其设为 null
+        num4 = null; 
     }
 
     if (num4 !== null) { // 成年人
