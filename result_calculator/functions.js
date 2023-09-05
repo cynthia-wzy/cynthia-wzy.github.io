@@ -648,15 +648,18 @@ function calculate2(){
     
     // 載入google chart繪製折線圖
     google.charts.load("current", {"packages":["corechart"]});
-    if (age <= 64){
-        google.charts.setOnLoadCallback(function() { // 成年人
-            drawChart(age, num1, num2, num3, num4, num5);
-        });
-    } else{
-        google.charts.setOnLoadCallback(function() { // 銀髮族
-            drawChart(age, num1, num2, num3, num5);
-        });
-    }
+    google.charts.setOnLoadCallback(function() { // 成年人
+        drawChart(age, num1, num2, num3, num4, num5);
+    });
+    // if (age <= 64){
+    //     google.charts.setOnLoadCallback(function() { // 成年人
+    //         drawChart(age, num1, num2, num3, num4, num5);
+    //     });
+    // } else{
+    //     google.charts.setOnLoadCallback(function() { // 銀髮族
+    //         drawChart(age, num1, num2, num3, num5);
+    //     });
+    // }
     
 }
 
