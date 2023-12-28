@@ -1,0 +1,82 @@
+#subtitle {
+    color: #B0B0B0;
+    font-style: italic;
+}
+
+h1 {
+    margin-bottom: -15px; 
+}
+
+#part1 {
+    background-color: #8B0000;
+    color: white;
+    padding: 10px; 
+}
+
+#part2 {
+    background-color: #000080;
+    color: white;
+    padding: 10px; 
+}
+
+#height, #weight, #num1, #num2, #num3, #num4, #num5 {
+    width: 170px;
+}
+
+#p2Title, caption {
+    font-weight: bold;
+}
+
+#gender {
+    width: 170px;
+    height: 23px;
+}
+
+#birthYear{
+    width: 170px;
+    height: 23px;
+}
+
+#cal1, #cal2 {
+    width:70px;
+    height: 28px;
+    border: none;
+    background-color: #909090;
+    font-size: 15px;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+#result1 input, #result2 input {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  
+th, td {
+border: 1px solid black;
+padding: 5px;
+text-align: center;
+}
+
+th {
+    background-color: #bccde3;
+}
+
+table tr td:first-child {
+    font-weight: bold;
+    background-color: #E8E8E8;
+}
+
+.highlighted-cell {
+    background-color: #FFD700;
+}
+
+#chart_div {
+    width: 100%; 
+    height: 400px;
+}

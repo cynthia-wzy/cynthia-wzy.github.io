@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>體適能結果計算機</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+    <h1>體適能結果計算機</h1>
+    <p id="subtitle">©2023體適能專案辦公室</p>
+    <p>請輸入以下資訊，並在計算第二部分前先完成計算第一部分</p>
+    <h4 id="part1">第一部分：身體基本數據</h4>
+    <div>
+        <p>性別： 
+            <select id="gender">
+                <option value="male">男</option>
+                <option value="female">女</option>
+            </select>
+        </p>
+
+        <p>出生年 (民國)：
+            <select id="birthYear">
+                <!-- 使用 JavaScript 生成選項 -->
+            </select>
+        </p>
+
+        <p>身高 (公分)： <input id="height" type="number" min="100" max="250"></p>
+        <p>體重 (公斤)： <input id="weight" type="number" min="20" max="130"></p>
+        <p>全身體脂肪重 (公斤)： <input id="bodyfat" type="number" max="100"></p>
+        <p><input id="cal1" type="button" value="計算"></p>
+        
+    </div>
+    
+    <div id="result1">
+        <p>BMI： <output id="result1-1" for="cal1"></output></p>
+        <p>體脂率： <output id="result1-2" for="cal1"></output></p>
+    </div>
+    
+    
+    <h4 id="part2">第二部分：心肺耐力數據</h4>
+    <div>
+        <p id="p2Title">漸進式原地抬膝踏步心率</p>
+        <p>運動第0分鐘心率： <input id="num1" type="number" min="50" max="220"></p>
+        <p>運動1分鐘後心率： <input id="num2" type="number" min="50" max="220"></p>
+        <p>運動2分鐘後心率： <input id="num3" type="number" min="50" max="220"></p>
+        <p>運動3分鐘後心率： <input id="num4" type="number" min="50" max="220"> （65歲以上免填）</p>
+        <p>運動結束1分鐘後心率： <input id="num5" type="number" min="50" max="220"></p>
+        <p><input id="cal2" type="button" value="計算" onclick="drawChart()"></p>
+    </div>
+    
+    <div id="result2">
+        <p>最大攝氧量估計值： <output id="result2-1" for="cal2"></p>
+        <p>心肺耐力評等： <output id="result2-2" for="cal2"></p>
+        <div id="result2-3"></div> 
+    </div>
+   
+    <div id="chart_div" class="chart-container"></div>
+
+    <script src="functions.js"></script>
+
+</body>
+</html>
