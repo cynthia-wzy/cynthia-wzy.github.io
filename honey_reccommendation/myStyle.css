@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: aliceblue;
 }
 
@@ -57,4 +57,24 @@ img {
 
 @media print {
     body {background-color: white;}
+} */
+
+h1 {
+    font-family: sans-serif, tahoma; 
+    color: #5c5b59;
 }
+label {
+    font-weight: 550; 
+    color:firebrick
+}
+.nRequired label {color: inherit;}
+#description{
+    color: lightslategrey;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.box{
+    background: papayawhip;
+}
+body {background-color: linen}
