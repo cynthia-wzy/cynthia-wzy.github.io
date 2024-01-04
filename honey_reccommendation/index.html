@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Honey Reccomendation</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+	<h1>丰玉峰蜜</h1>
+	<p id="description">找到屬於你的蜂蜜!</p>
+	<form method="post" action="https://cs2022">
+		<datalist id="tickmarks">
+			<option value="1"></option>
+			<option value="2"></option>
+			<option value="3"></option>
+			<option value="4"></option>
+			<option value="5"></option>
+		</datalist>
+
+		<p>
+			<label class="nRequired" style="color:rosybrown">甜度:
+				1
+				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
+				5
+			</label>
+		</p>
+		<p>
+			<label class="nRequired" style="color:rosybrown">酸度:
+				1
+				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
+				5
+			</label>
+		</p>
+		<p>
+			<label class="nRequired" style="color:rosybrown">苦度:
+				1
+				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
+				5
+			</label>
+		</p>
+
+		<p><input id="cal" type="button" value="推薦結果"></p>
+	
+	</form>
+</body>
+</html>
