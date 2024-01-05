@@ -1,0 +1,64 @@
+/* 
+.label {
+    float: left;
+    width: 15%;
+    margin-top: 12px;
+  }
+  
+.full {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+input[type=text], textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+.label {
+    font-family: papyrus, sans-serif, tahoma;
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    width:100%;
+    height:80%;
+}
+
+@media screen and (max-width: 700px) {
+    body {background-color:darkgrey;}
+}
+
+ */
+
+/*  */
+h1 {
+    color: #232323;
+}
+
+body {
+    background-color:rgb(253, 255, 220);
+}
+
+
+/* label {
+    font-weight: 550; 
+    color:firebrick
+}
+.nRequired label {color: inherit;}
+#description{
+    color: lightslategrey;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.box{
+    background: papayawhip;
+}
+body {background-color: linen} */
