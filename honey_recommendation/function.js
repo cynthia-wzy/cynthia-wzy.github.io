@@ -46,7 +46,7 @@ function BitterHoney(score){
             displayResult("文字A", "A.jpg");
             break;
         case 1: 
-            
+            displayResult("文字A", "A.jpg");
             break;
         case 0:  
             var randomNumber = Math.random();
