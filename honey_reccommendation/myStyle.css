@@ -1,12 +1,4 @@
-/* body {
-    background-color: aliceblue;
-}
-
-form {
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* 
 .label {
     float: left;
     width: 15%;
@@ -19,12 +11,6 @@ form {
     margin-top: 6px;
 }
 
-.col2 {
-    float: left;
-    width: 30%;
-    margin-top: 6px;
-}
-
 input[type=text], textarea{
     width: 100%;
     padding: 12px;
@@ -33,12 +19,6 @@ input[type=text], textarea{
     box-sizing: border-box;
 }
 
-textarea {
-    resize: none;
-    margin-top: 6px;
-    width:75%;
-    height: 80%;
-}
 
 .label {
     font-family: papyrus, sans-serif, tahoma;
@@ -55,15 +35,19 @@ img {
     body {background-color:darkgrey;}
 }
 
-@media print {
-    body {background-color: white;}
-} */
+ */
 
+/*  */
 h1 {
-    font-family: sans-serif, tahoma; 
-    color: #5c5b59;
+    color: #232323;
 }
-label {
+
+body {
+    background-color:rgb(253, 255, 220);
+}
+
+
+/* label {
     font-weight: 550; 
     color:firebrick
 }
@@ -77,4 +61,4 @@ label {
 .box{
     background: papayawhip;
 }
-body {background-color: linen}
+body {background-color: linen} */
