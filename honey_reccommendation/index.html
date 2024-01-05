@@ -11,40 +11,43 @@
 
 <body>
 	<h1>丰玉峰蜜</h1>
-	<p id="description">找到屬於你的蜂蜜!</p>
-	<form method="post" action="https://cs2022">
-		<datalist id="tickmarks">
-			<option value="1"></option>
-			<option value="2"></option>
-			<option value="3"></option>
-			<option value="4"></option>
-			<option value="5"></option>
-		</datalist>
+	<p id="description">快速找到屬於你的蜂蜜!</p>
+	<datalist id="tickmarks">
+		<option value="1"></option>
+		<option value="2"></option>
+		<option value="3"></option>
+		<option value="4"></option>
+		<option value="5"></option>
+	</datalist>
 
-		<p>
-			<label class="nRequired" style="color:rosybrown">甜度:
-				1
-				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
-				5
-			</label>
-		</p>
-		<p>
-			<label class="nRequired" style="color:rosybrown">酸度:
-				1
-				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
-				5
-			</label>
-		</p>
-		<p>
-			<label class="nRequired" style="color:rosybrown">苦度:
-				1
-				<input type="range" min="1" max="5" value="2" step="1" list="tickmarks">
-				5
-			</label>
-		</p>
+	<p>
+		<label class="nRequired">甜度:
+			1
+			<input id="sweetness" type="range" min="1" max="5" value="2" step="1" list="tickmarks">
+			5
+		</label>
+	</p>
+	<p>
+		<label class="nRequired">酸度:
+			1
+			<input id="sourness" type="range" min="1" max="5" value="2" step="1" list="tickmarks">
+			5
+		</label>
+	</p>
+	<p>
+		<label class="nRequired">想要帶點特別的苦味點綴嗎？
+			<input type="radio" name="bitter" value="bitterYes">好!
+			<input type="radio" name="bitter" value="bitterNo">先不用
+		</label>
+	</p>
 
-		<p><input id="cal" type="button" value="推薦結果"></p>
+	<p><input id="cal" type="button" value="推薦結果"></p>
+
+	<!--顯示結果-->
+    <div id="resultContainer">
+        <p id="resultText"></p>
+        <img id="resultImage" src="" alt="">
+    </div>
 	
-	</form>
 </body>
 </html>
