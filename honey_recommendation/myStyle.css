@@ -39,6 +39,13 @@ img {
 
 /*  */
 h1 {
+    font-size: 45px;
+    text-shadow: 2px 2px 4px rgb(253, 255, 220);
+}
+
+#description{
+    font-size: 20px;
+    font-weight: bold; 
     color: #232323;
 }
 
@@ -56,9 +63,11 @@ h1 {
 } */
 
 body {
-    display: flex; /* 使用 flexbox 進行排列 */
-    justify-content: space-between; /* 將子元素分別放置在容器的兩側 */
-    align-items: flex-start; /* 垂直方向靠上對齊 */
+    background-image: url('background.jpg'); /* 替換 'your-background-image.jpg' 為你的圖片路徑 */
+    background-size: cover; /* 設置背景圖片覆蓋整個視窗 */
+    background-position: center; /* 將背景圖片置中 */
+    background-repeat: no-repeat; /* 禁止背景圖片重複 */
+
     background-color: rgb(253, 255, 220);
     overflow-y: hidden;
 }
