@@ -65,7 +65,6 @@ h1 {
 body {
     background-image: url('background.jpg'); /* 替換 'your-background-image.jpg' 為你的圖片路徑 */
     background-size: cover; /* 設置背景圖片覆蓋整個視窗 */
-    background-position: center; /* 將背景圖片置中 */
     background-repeat: no-repeat; /* 禁止背景圖片重複 */
 
     background-color: rgb(253, 255, 220);
@@ -73,22 +72,12 @@ body {
 }
 
 #container {
-    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    /* 其他樣式 ... */
 }
 
-#honeyPicContainer {
-    width: 60%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-#honeyPic {
-    max-width: 100%; /* 圖片最大寬度為其容器的寬度 */
-    max-height: 100%; /* 圖片最大高度為視窗高度 */
-    width: auto; /* 保持寬高比 */
-    align-self: center;
-}
 
 /* label {
     font-weight: 550; 
