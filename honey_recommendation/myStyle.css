@@ -42,17 +42,39 @@ h1 {
     color: #232323;
 }
 
-body {
+/* body {
     background-color:rgb(253, 255, 220);
 }
 
+#honeyPicContainer {
+    width: 100%; 
+}
+  
 #honeyPic {
-    position: absolute;
-    right: 0px;
-    top: 0%;
-    /* transform: translateY(-50%); */
-    width: 50%; 
-    height: auto
+    float: right; 
+    width: 60%;
+} */
+
+body {
+    display: flex; /* 使用 flexbox 進行排列 */
+    justify-content: space-between; /* 將子元素分別放置在容器的兩側 */
+    align-items: flex-start; /* 垂直方向靠上對齊 */
+    background-color: rgb(253, 255, 220);
+}
+
+#container {
+    width: 50%;
+}
+
+#honeyPicContainer {
+    width: 50%;
+    height: 100%; /* 確保高度填滿 */
+    display: flex;
+    align-items: center;
+}
+
+#honeyPic {
+    width: 100%; /* 讓圖片佔滿容器寬度 */
 }
 
 /* label {
