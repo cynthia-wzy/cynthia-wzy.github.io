@@ -1,43 +1,3 @@
-/* 
-.label {
-    float: left;
-    width: 15%;
-    margin-top: 12px;
-  }
-  
-.full {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-input[type=text], textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-
-.label {
-    font-family: papyrus, sans-serif, tahoma;
-    font-weight: bold;
-    text-align: center;
-}
-
-img {
-    width:100%;
-    height:80%;
-}
-
-@media screen and (max-width: 700px) {
-    body {background-color:darkgrey;}
-}
-
- */
-
-/*  */
 h1 {
     font-size: 45px;
     text-shadow: 2px 2px 4px rgb(253, 255, 220);
@@ -49,48 +9,21 @@ h1 {
     color: #232323;
 }
 
-/* body {
-    background-color:rgb(253, 255, 220);
-}
-
-#honeyPicContainer {
-    width: 100%; 
-}
-  
-#honeyPic {
-    float: right; 
-    width: 60%;
-} */
-
-body {
-    background-image: url('background.jpg'); /* 替換 'your-background-image.jpg' 為你的圖片路徑 */
-    background-size: cover; /* 設置背景圖片覆蓋整個視窗 */
-    background-repeat: no-repeat; /* 禁止背景圖片重複 */
-
-    background-color: rgb(253, 255, 220);
-    overflow-y: hidden;
-}
-
 #container {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 10%;
-    /* 其他樣式 ... */
 }
 
-
-/* label {
-    font-weight: 550; 
-    color:firebrick
-}
-.nRequired label {color: inherit;}
-#description{
-    color: lightslategrey;
-    font-size: 13pt;
-    font-weight: bold;
+#resultContainer {
+    position: absolute;
+    top: 30%;
+    right: 10%;
 }
 
-.box{
-    background: papayawhip;
+body {
+    background-image: url('background.jpg'); 
+    background-size: cover; /* 設置背景圖片覆蓋整個視窗 */
+    background-repeat: no-repeat; /* 禁止背景圖片重複 */
+    overflow-y: hidden;
 }
-body {background-color: linen} */
