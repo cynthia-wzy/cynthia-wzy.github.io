@@ -60,21 +60,25 @@ body {
     justify-content: space-between; /* 將子元素分別放置在容器的兩側 */
     align-items: flex-start; /* 垂直方向靠上對齊 */
     background-color: rgb(253, 255, 220);
+    overflow-y: hidden;
 }
 
 #container {
-    width: 50%;
+    width: 40%;
 }
 
 #honeyPicContainer {
-    width: 50%;
-    height: 100%; /* 確保高度填滿 */
+    width: 60%;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
 
 #honeyPic {
-    width: 100%; /* 讓圖片佔滿容器寬度 */
+    max-width: 100%; /* 圖片最大寬度為其容器的寬度 */
+    max-height: 100%; /* 圖片最大高度為視窗高度 */
+    width: auto; /* 保持寬高比 */
+    align-self: center;
 }
 
 /* label {
