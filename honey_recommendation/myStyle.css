@@ -48,10 +48,10 @@ body {
 
 #honeyPic {
     position: absolute;
-    right: 10px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%);
-    width: 80%; 
+    width: 50; 
     height: auto
 }
 
