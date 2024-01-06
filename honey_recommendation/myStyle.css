@@ -46,6 +46,14 @@ body {
     background-color:rgb(253, 255, 220);
 }
 
+#honeyPic {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%; 
+    height: auto
+}
 
 /* label {
     font-weight: 550; 
