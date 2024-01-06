@@ -49,9 +49,9 @@ body {
 #honeyPic {
     position: absolute;
     right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50; 
+    top: 0%;
+    /* transform: translateY(-50%); */
+    width: 50%; 
     height: auto
 }
 
