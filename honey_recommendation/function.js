@@ -75,11 +75,11 @@ function displayResults(honeys) {
     if (honeys.length >= 2) {
         // 第一種蜂蜜
         resultText1.textContent = "推薦的蜂蜜: " + honeys[0].name;
-        resultImage1.src = filteredHoneys[0].name + ".jpg" // 顯示圖片
+        resultImage1.src = honeys[0].name + ".jpg" // 顯示圖片
 
         // 第二種蜂蜜
         resultText2.textContent = "推薦的蜂蜜: " + honeys[1].name;
-        resultImage2.src = filteredHoneys[1].name + ".jpg"; // 顯示圖片
+        resultImage2.src = honeys[1].name + ".jpg"; // 顯示圖片
     } else {
         // 处理蜂蜜数量不足 2 的情况
         alert("找不到符合您喜好的蜂蜜！");
