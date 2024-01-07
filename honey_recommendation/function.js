@@ -11,6 +11,20 @@ function calculateHoneyResult() {
     var sourValue = document.getElementById("sourness").value;
     var bitterOption = document.querySelector('input[name="bitter"]:checked');
 
+    if (bitterOption) {
+        var bitterValue = bitterOption.value; // 獲取苦味的值
+
+        if (bitterValue === "bitterYes") {
+        BitterHoney(honeyScore);
+        } else {
+        NoBitterHoney(honeyScore);
+        }
+    } else {
+      // 如果沒有選擇苦味的選項，提醒用戶選擇
+      alert("請選擇是否想帶有苦味～");
+    }
+  
+
     // 蜂蜜的屬性
     var honeys = [
         { name: "荔枝蜜", sweetness: 3, sourness: 2, bitter: false },
