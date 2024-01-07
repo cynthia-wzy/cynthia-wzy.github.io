@@ -27,16 +27,14 @@ h1 {
 
 #resultContainer1 {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;   
-    width: 20%; 
 }
 
 #resultContainer2 {
     position: absolute;
-    top: 30%;
-    left: 80%;   
-    width: 20%;  
+    top: 20%;
+    left: 80%;    
 }
 
 body {
