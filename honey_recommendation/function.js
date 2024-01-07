@@ -81,31 +81,6 @@ function displayResults(honeys) {
         resultText2.textContent = "推薦的蜂蜜: " + honeys[1].name;
         resultImage2.src = honeys[1].name + ".jpg"; // 顯示圖片
     } else {
-        // 处理蜂蜜数量不足 2 的情况
         alert("找不到符合您喜好的蜂蜜！");
     }
 }
-
-
-
-
-// function displayResults(honeys) {
-//     // 在这里添加显示结果的代码，可以根据需要展示蜂蜜的名字、图片等信息
-//     var resultText = document.getElementById("resultText");
-//     var resultImage = document.getElementById("resultImage");
-
-//     // 示例：将结果显示为文字
-//     resultText.textContent = "推薦的蜂蜜: " + honeys[0].name + " 和 " + honeys[1].name;
-// }
-
-
-// document.getElementById("resultText").textContent = text;
-// document.getElementById("resultImage").src = imageSrc;
-// document.getElementById("resultImage").alt = text;
-
-
-//   function displayResult(text, imageSrc) {
-//     document.getElementById("resultText").textContent = text;
-//     document.getElementById("resultImage").src = imageSrc;
-//     document.getElementById("resultImage").alt = text;
-// }
