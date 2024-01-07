@@ -38,7 +38,7 @@ function calculateHoneyResult() {
     // 根據是否想要苦味再篩選一次
     if (bitterValue === "bitterYes") {
         // 如果用户选择想要苦味，则找到甜度、酸度越近的两种蜂蜜，其中至少一种是带有苦味的
-        filteredHoneys = findClosestHoneys(honeys.filter(h => h.bitter), sweetValue, sourValue);
+        filteredHoneys = findClosestHoneys(honeys, sweetValue, sourValue);
     } else {
         // 如果用户选择不想要苦味，则去除有苦味的蜂蜜，然后找到甜度、酸度越近的两种蜂蜜
         filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue);
