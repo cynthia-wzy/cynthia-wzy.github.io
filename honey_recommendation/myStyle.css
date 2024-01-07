@@ -9,6 +9,10 @@ h1 {
     color: #232323;
 }
 
+#recHoney, #recDrink{
+    width: 300px;
+}
+
 #container {
     position: absolute;
     top: 30%;
@@ -18,7 +22,7 @@ h1 {
 #resultContainer {
     position: absolute;
     top: 30%;
-    right: 10%;
+    right: 50%;
 }
 
 body {
