@@ -43,7 +43,7 @@ function calculateHoneyResult() {
         filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue).slice(0, 2);
     }
 
-    // console.log("Filtered Honeys:", filteredHoneys);
+    console.log("Filtered Honeys:", filteredHoneys);
     
     // 顯示结果
     // displayResults(filteredHoneys);
