@@ -32,28 +32,21 @@ function calculateHoneyResult() {
 
     var filteredHoneys;
 
+    // 根據使用者選擇的甜度和酸度過濾蜂蜜
+    filteredHoneys = filterByUserPreference(honeys, sweetValue, sourValue);
+
+    // 根據是否想要苦味再篩選一次
     if (bitterValue === "bitterYes") {
         // 如果用户选择想要苦味，则找到甜度、酸度越近的两种蜂蜜，其中至少一种是带有苦味的
-        filteredHoneys = findClosestHoneys(honeys.filter(h => h.bitter), sweetValue, sourValue);
+        filteredHoneys = findClosestHoneys(filteredHoneys.filter(h => h.bitter), sweetValue, sourValue);
     } else {
         // 如果用户选择不想要苦味，则去除有苦味的蜂蜜，然后找到甜度、酸度越近的两种蜂蜜
-        filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue);
+        filteredHoneys = findClosestHoneys(filteredHoneys.filter(h => !h.bitter), sweetValue, sourValue);
     }
 
-    // 根据用户选择的甜度和酸度，过滤蜂蜜
-    filteredHoneys = filterByUserPreference(filteredHoneys, sweetValue, sourValue);
-
+    
     // 显示结果
     displayResults(filteredHoneys);
-}
-
-function findClosestHoneys(honeys, targetSweetness, targetSourness) {
-    // 使用歐基里得距離計算最接近的蜂蜜
-    return honeys.sort((a, b) => {
-        var distanceA = Math.sqrt(Math.pow((a.sweetness - targetSweetness), 2) + Math.pow((a.sourness - targetSourness), 2));
-        var distanceB = Math.sqrt(Math.pow((b.sweetness - targetSweetness), 2) + Math.pow((b.sourness - targetSourness), 2));
-        return distanceA - distanceB;
-    }).slice(0, 2); // 取前2個最接近的蜂蜜
 }
 
 function filterByUserPreference(honeys, userSweetness, userSourness) {
@@ -66,6 +59,17 @@ function filterByUserPreference(honeys, userSweetness, userSourness) {
         }
     });
 }
+
+function findClosestHoneys(honeys, targetSweetness, targetSourness) {
+    // 使用歐基里得距離計算最接近的蜂蜜
+    return honeys.sort((a, b) => {
+        var distanceA = Math.sqrt(Math.pow((a.sweetness - targetSweetness), 2) + Math.pow((a.sourness - targetSourness), 2));
+        var distanceB = Math.sqrt(Math.pow((b.sweetness - targetSweetness), 2) + Math.pow((b.sourness - targetSourness), 2));
+        return distanceA - distanceB;
+    }).slice(0, 2); // 取前2個最接近的蜂蜜
+}
+
+
 
 function displayResults(honeys) {
     // 在这里添加显示结果的代码，可以根据需要展示蜂蜜的名字、图片等信息
