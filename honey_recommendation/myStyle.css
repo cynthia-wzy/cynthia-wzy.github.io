@@ -28,15 +28,15 @@ h1 {
 #resultContainer1 {
     position: absolute;
     top: 30%;
-    left: 50%;   /* 調整 resultContainer 左邊距離為畫面的 50% */
-    width: 25%;  /* 調整 resultContainer 寬度為畫面的 60% */
+    left: 50%;   
+    width: 25%; 
 }
 
 #resultContainer2 {
     position: absolute;
     top: 30%;
-    left: 80%;   /* 調整 resultContainer 左邊距離為畫面的 50% */
-    width: 25%;  /* 調整 resultContainer 寬度為畫面的 60% */
+    left: 80%;   
+    width: 25%;  
 }
 
 body {
