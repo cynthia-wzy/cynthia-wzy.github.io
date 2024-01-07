@@ -9,6 +9,10 @@ h1 {
     color: #232323;
 }
 
+#resultText1, #resultText12{
+    font-weight: bold; 
+}
+
 #recHoney, #recDrink{
     width: 300px;
 }
