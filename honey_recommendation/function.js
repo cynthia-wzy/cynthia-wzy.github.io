@@ -44,9 +44,9 @@ function calculateHoneyResult() {
         filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue);
     }
 
-    
+    console.log("Filtered Honeys:", filteredHoneys);
     // 显示结果
-    displayResults(filteredHoneys);
+    // displayResults(filteredHoneys);
 }
 
 // function filterByUserPreference(honeys, userSweetness, userSourness) {
@@ -71,14 +71,14 @@ function findClosestHoneys(honeys, targetSweetness, targetSourness) {
 
 
 
-function displayResults(honeys) {
-    // 在这里添加显示结果的代码，可以根据需要展示蜂蜜的名字、图片等信息
-    var resultText = document.getElementById("resultText");
-    var resultImage = document.getElementById("resultImage");
+// function displayResults(honeys) {
+//     // 在这里添加显示结果的代码，可以根据需要展示蜂蜜的名字、图片等信息
+//     var resultText = document.getElementById("resultText");
+//     var resultImage = document.getElementById("resultImage");
 
-    // 示例：将结果显示为文字
-    resultText.textContent = "推薦的蜂蜜: " + honeys[0].name + " 和 " + honeys[1].name;
-}
+//     // 示例：将结果显示为文字
+//     resultText.textContent = "推薦的蜂蜜: " + honeys[0].name + " 和 " + honeys[1].name;
+// }
 
 
 // document.getElementById("resultText").textContent = text;
