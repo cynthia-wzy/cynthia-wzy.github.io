@@ -16,6 +16,7 @@ function calculateHoneyResult() {
     } else {
       // 如果沒有選擇苦味的選項，提醒用戶選擇
       alert("請選擇是否想帶有苦味～");
+      return;
     }
   
 
@@ -46,9 +47,8 @@ function calculateHoneyResult() {
     console.log("Filtered Honeys:", filteredHoneys);
     
     // 顯示结果
-    // displayResults(filteredHoneys);
+    displayResults(filteredHoneys);
 }
-
 
 
 function findClosestHoneys(honeys, targetSweetness, targetSourness) {
@@ -59,6 +59,33 @@ function findClosestHoneys(honeys, targetSweetness, targetSourness) {
         return distanceA - distanceB;
     }).slice(0, 2); // 取前2個最接近的蜂蜜
 }
+
+function displayResults(honeys) {
+    var resultText1 = document.getElementById("resultText1");
+    var resultImage1 = document.getElementById("resultImage1");
+    var resultText2 = document.getElementById("resultText2");
+    var resultImage2 = document.getElementById("resultImage2");
+
+    // 清空先前的結果
+    resultText1.textContent = "";
+    resultImage1.src = "";
+    resultText2.textContent = "";
+    resultImage2.src = "";
+
+    if (honeys.length >= 2) {
+        // 第一種蜂蜜
+        resultText1.textContent = "推薦的蜂蜜: " + honeys[0].name;
+        resultImage1.src = filteredHoneys[0].name + ".jpg" // 顯示圖片
+
+        // 第二種蜂蜜
+        resultText2.textContent = "推薦的蜂蜜: " + honeys[1].name;
+        resultImage2.src = filteredHoneys[1].name + ".jpg"; // 顯示圖片
+    } else {
+        // 处理蜂蜜数量不足 2 的情况
+        alert("找不到符合您喜好的蜂蜜！");
+    }
+}
+
 
 
 
