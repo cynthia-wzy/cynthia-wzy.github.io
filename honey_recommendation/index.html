@@ -12,7 +12,7 @@
 <body>
 	<div id="container">
 		<h1>丰玉峰蜜</h1>
-		<p id="description">快速找到屬於你的蜂蜜!</p>
+		<p id="description">快速找到屬於你的蜂蜜&相關飲品!</p>
 		<datalist id="tickmarks">
 			<option value="1"></option>
 			<option value="2"></option>
@@ -36,13 +36,14 @@
 			</label>
 		</p>
 		<p>
-			<label class="nRequired">想要帶點特別的苦味點綴嗎？
-				<input type="radio" name="bitter" value="bitterYes">好!
+			<label class="nRequired">能接受帶點微微的苦味點綴嗎？
+				<input type="radio" name="bitter" value="bitterYes">可以!
 				<input type="radio" name="bitter" value="bitterNo">先不用
 			</label>
 		</p>
 
-		<p><input id="cal" type="button" value="推薦結果" onclick="calculateResult()"></p>
+		<p><input id="recHoney" type="button" value="推薦我蜂蜜" onclick="calculateResult()"></p>
+		<p><input id="recDrink" type="button" value="推薦我飲品" onclick="calculateResult()"></p>
 
 	</div>
 
