@@ -12,13 +12,7 @@ function calculateHoneyResult() {
     var bitterOption = document.querySelector('input[name="bitter"]:checked');
 
     if (bitterOption) {
-        var bitterValue = bitterOption.value; // 獲取苦味的值
-
-        if (bitterValue === "bitterYes") {
-        BitterHoney(honeyScore);
-        } else {
-        NoBitterHoney(honeyScore);
-        }
+        var bitterValue = bitterOption.value;
     } else {
       // 如果沒有選擇苦味的選項，提醒用戶選擇
       alert("請選擇是否想帶有苦味～");
@@ -38,7 +32,7 @@ function calculateHoneyResult() {
 
     var filteredHoneys;
 
-    if (bitterOption && bitterOption.value === "bitterYes") {
+    if (bitterValue === "bitterYes") {
         // 如果用户选择想要苦味，则找到甜度、酸度越近的两种蜂蜜，其中至少一种是带有苦味的
         filteredHoneys = findClosestHoneys(honeys.filter(h => h.bitter), sweetValue, sourValue);
     } else {
