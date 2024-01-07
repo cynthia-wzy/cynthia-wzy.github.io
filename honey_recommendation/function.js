@@ -33,15 +33,15 @@ function calculateHoneyResult() {
     var filteredHoneys;
 
     // 根據使用者選擇的甜度和酸度過濾蜂蜜
-    filteredHoneys = filterByUserPreference(honeys, sweetValue, sourValue);
+    // filteredHoneys = filterByUserPreference(honeys, sweetValue, sourValue);
 
     // 根據是否想要苦味再篩選一次
     if (bitterValue === "bitterYes") {
         // 如果用户选择想要苦味，则找到甜度、酸度越近的两种蜂蜜，其中至少一种是带有苦味的
-        filteredHoneys = findClosestHoneys(filteredHoneys.filter(h => h.bitter), sweetValue, sourValue);
+        filteredHoneys = findClosestHoneys(honeys.filter(h => h.bitter), sweetValue, sourValue);
     } else {
         // 如果用户选择不想要苦味，则去除有苦味的蜂蜜，然后找到甜度、酸度越近的两种蜂蜜
-        filteredHoneys = findClosestHoneys(filteredHoneys.filter(h => !h.bitter), sweetValue, sourValue);
+        filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue);
     }
 
     
@@ -49,16 +49,16 @@ function calculateHoneyResult() {
     displayResults(filteredHoneys);
 }
 
-function filterByUserPreference(honeys, userSweetness, userSourness) {
-    // 如果用户选择的甜度>=酸度，就要推荐甜度>=酸度的；如果用户选择的甜度<=酸度，就要推荐甜度甜度<=酸度
-    return honeys.filter(honey => {
-        if (userSweetness >= userSourness) {
-            return honey.sweetness >= honey.sourness;
-        } else {
-            return honey.sweetness <= honey.sourness;
-        }
-    });
-}
+// function filterByUserPreference(honeys, userSweetness, userSourness) {
+//     // 如果用户选择的甜度>=酸度，就要推荐甜度>=酸度的；如果用户选择的甜度<=酸度，就要推荐甜度甜度<=酸度
+//     return honeys.filter(honey => {
+//         if (userSweetness >= userSourness) {
+//             return honey.sweetness >= honey.sourness;
+//         } else {
+//             return honey.sweetness <= honey.sourness;
+//         }
+//     });
+// }
 
 function findClosestHoneys(honeys, targetSweetness, targetSourness) {
     // 使用歐基里得距離計算最接近的蜂蜜
