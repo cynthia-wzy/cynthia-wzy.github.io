@@ -32,33 +32,24 @@ function calculateHoneyResult() {
 
     var filteredHoneys;
 
-    // 根據使用者選擇的甜度和酸度過濾蜂蜜
-    // filteredHoneys = filterByUserPreference(honeys, sweetValue, sourValue);
-
-    // 根據是否想要苦味再篩選一次
+    // 根據是否能接受苦味篩選
     if (bitterValue === "bitterYes") {
-        // 如果用户选择想要苦味，则找到甜度、酸度越近的两种蜂蜜，其中至少一种是带有苦味的
-        filteredHoneys = findClosestHoneys(honeys, sweetValue, sourValue);
+        // 選擇兩種蜂蜜，其中至少一種是有苦味的
+        filteredHoneys = honeys.filter(h => h.bitter).slice(0, 1);
+        // 再加上一種無苦味的蜂蜜
+        filteredHoneys = filteredHoneys.concat(findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue).slice(0, 1));
     } else {
-        // 如果用户选择不想要苦味，则去除有苦味的蜂蜜，然后找到甜度、酸度越近的两种蜂蜜
-        filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue);
+        // 沒有苦味的情況下，選擇兩種無苦味的蜂蜜
+        filteredHoneys = findClosestHoneys(honeys.filter(h => !h.bitter), sweetValue, sourValue).slice(0, 2);
     }
 
-    console.log("Filtered Honeys:", filteredHoneys);
-    // 显示结果
+    // console.log("Filtered Honeys:", filteredHoneys);
+    
+    // 顯示结果
     // displayResults(filteredHoneys);
 }
 
-// function filterByUserPreference(honeys, userSweetness, userSourness) {
-//     // 如果用户选择的甜度>=酸度，就要推荐甜度>=酸度的；如果用户选择的甜度<=酸度，就要推荐甜度甜度<=酸度
-//     return honeys.filter(honey => {
-//         if (userSweetness >= userSourness) {
-//             return honey.sweetness >= honey.sourness;
-//         } else {
-//             return honey.sweetness <= honey.sourness;
-//         }
-//     });
-// }
+
 
 function findClosestHoneys(honeys, targetSweetness, targetSourness) {
     // 使用歐基里得距離計算最接近的蜂蜜
@@ -85,72 +76,9 @@ function findClosestHoneys(honeys, targetSweetness, targetSourness) {
 // document.getElementById("resultImage").src = imageSrc;
 // document.getElementById("resultImage").alt = text;
 
-//     if (bitterOption) {
-//         var bitterValue = bitterOption.value; // 獲取苦味的值
-
-//         if (bitterValue === "bitterYes") {
-//         BitterHoney(honeyScore);
-//         } else {
-//         NoBitterHoney(honeyScore);
-//         }
-//     } else {
-//       // 如果沒有選擇苦味的選項，提醒用戶選擇
-//       alert("請選擇是否想帶有苦味～");
-//     }
-//   }
-
 
 //   function displayResult(text, imageSrc) {
 //     document.getElementById("resultText").textContent = text;
 //     document.getElementById("resultImage").src = imageSrc;
 //     document.getElementById("resultImage").alt = text;
-// }
-
-
-// function BitterHoney(score){
-//     switch(score) {
-//         case 4: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case 3: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case 2: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case 1: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case 0:  
-//             var randomNumber = Math.random();
-
-//             if (randomNumber < 0.5) {
-//                 displayResult("文字A", "A.jpg");
-//             } else {
-//                 displayResult("文字B", "B.jpg");
-//             }
-//             break;
-//         case -1: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case -2: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case -3: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-//         case -4: 
-//             displayResult("文字A", "A.jpg");
-//             break;
-
-//     }
-// }
-
-
-// function NoBitterHoney(score){
-    
-// }
-
-// function calculateDrinkResult() {
-
 // }
